@@ -2,6 +2,8 @@ uuid: 566a64b1-a05f-49f6-b3bd-6e480765ee7b
 langcode: en
 status: true
 dependencies:
+  module:
+    - ctools
   theme:
     - diad
 _core:
@@ -9,7 +11,7 @@ _core:
 id: diad_page_title
 theme: diad
 region: content
-weight: -5
+weight: -3
 provider: null
 plugin: page_title_block
 settings:
@@ -17,4 +19,14 @@ settings:
   label: 'Page title'
   provider: core
   label_display: '0'
-visibility: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      event: event
+      home: home
+      landing: landing
+      page: page
+    negate: true
+    context_mapping:
+      node: '@node.node_route_context:node'

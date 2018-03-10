@@ -1,21 +1,8 @@
 .maintenance-page {
-  .l-hero-inner {
-  }
-
-  .r-header-main {
-    min-height: $header-height-2;
-  }
-
   .r-content {
     max-width: $node-content-width;
     padding-top: $content-padding;
     padding-bottom: $content-padding;
-  }
-
-  @include mq($until: bp-tablet) {
-    .r-header-main {
-      min-height: $header-height-1;
-    }
   }
 }
 

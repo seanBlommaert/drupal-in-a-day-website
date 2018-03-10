@@ -30,7 +30,6 @@
 
 .wrapper-main {
   flex-grow: 1;
-  margin-top: $header-height-1;
 }
 
 .wrapper-footer {
@@ -105,10 +104,6 @@
     .toolbar-tray-open.toolbar-vertical.toolbar-fixed & {
       left: $menu-admin-width-expanded;
     }
-  }
-
-  .wrapper-main {
-    margin-top: $header-height-2;
   }
 }
 

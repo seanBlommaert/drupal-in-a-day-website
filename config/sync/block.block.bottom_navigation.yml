@@ -11,7 +11,7 @@ dependencies:
 id: bottom_navigation
 theme: diad
 region: footer_first
-weight: -5
+weight: -4
 provider: null
 plugin: 'system_menu_block:footer'
 settings:

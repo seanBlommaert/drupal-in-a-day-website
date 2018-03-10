@@ -11,7 +11,7 @@ dependencies:
 id: header_navigation
 theme: diad
 region: navigation
-weight: -5
+weight: -4
 provider: null
 plugin: 'system_menu_block:main'
 settings:

@@ -42,6 +42,7 @@ module:
   webform: 0
   webform_ui: 0
   ds: 1
+  ds_extras: 2
   paragraphs: 11
 theme:
   stark: 0

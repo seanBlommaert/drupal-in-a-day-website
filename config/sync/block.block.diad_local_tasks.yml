@@ -8,8 +8,8 @@ _core:
   default_config_hash: c-06bbElRY5sKmglk74ppgTW93Et4-EJFyNiUZMb8JY
 id: diad_local_tasks
 theme: diad
-region: content
-weight: -5
+region: content_top
+weight: -3
 provider: null
 plugin: local_tasks_block
 settings:

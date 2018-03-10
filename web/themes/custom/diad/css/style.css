@@ -1069,7 +1069,6 @@ blockquote:after {
 .wrapper-main {
   -ms-flex-positive: 1;
       flex-grow: 1;
-  margin-top: 3.75rem;
 }
 
 .wrapper-footer {
@@ -1127,9 +1126,6 @@ blockquote:after {
   }
   .toolbar-tray-open.toolbar-vertical.toolbar-fixed .wrapper-header {
     left: 15rem;
-  }
-  .wrapper-main {
-    margin-top: 4.375rem;
   }
 }
 
@@ -2320,20 +2316,10 @@ img {
   }
 }
 
-.maintenance-page .r-header-main {
-  min-height: 4.375rem;
-}
-
 .maintenance-page .r-content {
   max-width: 44.375rem;
   padding-top: 2.625rem;
   padding-bottom: 2.625rem;
-}
-
-@media (max-width: 38.615em) {
-  .maintenance-page .r-header-main {
-    min-height: 3.75rem;
-  }
 }
 
 .maintenance-page__title {
