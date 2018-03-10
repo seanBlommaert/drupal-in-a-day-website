@@ -1,6 +1,6 @@
 # Drupal in a Day
 
-This project contains the Drupal in a Day website.
+This project contains the Drupal in a Day website!
 It was based on [Composer template for Drupal projects](https://github.com/drupal-composer/drupal-project).
 Also read the documentation of the template for more information.
 
@@ -9,7 +9,7 @@ Also read the documentation of the template for more information.
 First you need to [install composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx).
 
 > Note: The instructions below refer to the [global composer installation](https://getcomposer.org/doc/00-intro.md#globally).
-You might need to replace `composer` with `php composer.phar` (or similar) 
+You might need to replace `composer` with `php composer.phar` (or similar)
 for your setup.
 
 After that you can install the project from the root of the application:
@@ -18,7 +18,7 @@ After that you can install the project from the root of the application:
 composer install
 ```
 
-With `composer require ...` you can download new modules to the 
+With `composer require ...` you can download new modules to the
 application.
 
 ```
@@ -31,7 +31,7 @@ When adding new modules, make sure a specific version is specified. We don't wan
 __Install clean new site__
 
 The [Config Installer](https://www.drupal.org/project/config_installer) module was added to be able to install a clean site from configuration.
-More information on the module can be found in [this blog](https://evolvingweb.ca/blog/restoring-drupal-8-site-configuration-files). 
+More information on the module can be found in [this blog](https://evolvingweb.ca/blog/restoring-drupal-8-site-configuration-files).
 Using drush you can easily set up a fresh installation for test/development:
 - Make sure all composer packages are installed.
 - Copy _web/sites/default/default.settings.local.php_ to _web/sites/default/settings.local.php_.
@@ -94,7 +94,7 @@ Make sure the excluded config is not removed on the production environment with 
 
 ## Patches
 
-To add a patch to drupal module foobar insert the patches section in the extra 
+To add a patch to drupal module foobar insert the patches section in the extra
 section of composer.json:
 ```json
 "extra": {
