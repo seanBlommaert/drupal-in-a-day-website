@@ -1,24 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="8px" height="12px" viewBox="0 0 8 12" style="enable-background:new 0 0 8 12;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#FF9901;}
-</style>
-<title>Chevron</title>
-<desc>Created with Sketch.</desc>
-<g id="Page-1">
-	<g id="_x30_0a-diad-concept-1" transform="translate(-881.000000, -2572.000000)">
-		<g id="Content-bottom" transform="translate(-47.000000, 2029.000000)">
-			<g id="Stories" transform="translate(180.000000, 0.000000)">
-				<g id="Button" transform="translate(524.000000, 525.000000)">
-					<g id="Chevron">
-						<polygon class="st0" points="226,29.9 224,28 228,24 224,20 226,18 231.9,24 						"/>
-					</g>
-				</g>
-			</g>
-		</g>
-	</g>
-</g>
+<svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" width="8" height="12" viewBox="0 0 8 12">
+    <style>
+        .st0{fill:#ff9901}
+    </style>
+    <title>
+        Chevron
+    </title>
+    <g id="Page-1">
+        <g id="_x30_0a-diad-concept-1" transform="translate(-881 -2572)">
+            <g id="Content-bottom" transform="translate(-47 2029)">
+                <g id="Stories" transform="translate(180)">
+                    <g id="Button" transform="translate(524 525)">
+                        <path id="Chevron" d="M226 29.9l-2-1.9 4-4-4-4 2-2 5.9 6z" class="st0"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
 </svg>

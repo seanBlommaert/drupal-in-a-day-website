@@ -30,8 +30,8 @@ regions:
   footer_third: Footer third
 
 stylesheets-remove:
-  - @classy/css/contextual/contextual.theme.css
-  - @classy/css/contextual/contextual.module.css
-  - @classy/css/contextual/contextual.toolbar.css
-  - @classy/css/contextual/contextual.icons.theme.css
-  - @classy/css/components/menu.css
+  - "@classy/css/contextual/contextual.theme.css"
+  - "@classy/css/contextual/contextual.module.css"
+  - "@classy/css/contextual/contextual.toolbar.css"
+  - "@classy/css/contextual/contextual.icons.theme.css"
+  - "@classy/css/components/menu.css"

@@ -96,11 +96,10 @@
 
 @include mq(bp-tablet) {
   .wrapper-header {
-    position: fixed;
+    position: sticky;
     // Contextual links are "z-index: 500".
     z-index: 501;
-    right: 0;
-    left: 0;
+    top: 0;
     flex-shrink: 0;
 
     .toolbar-tray-open.toolbar-vertical.toolbar-fixed & {
@@ -251,10 +250,9 @@
 
 @include mq($until: bp-tablet) {
   .r-header-main {
-    position: fixed;
+    position: sticky;
     z-index: 2;
-    right: 0;
-    left: 0;
+    top: 0;
     padding-right: $site-padding-1;
     padding-left: $site-padding-1;
 

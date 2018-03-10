@@ -1,0 +1,307 @@
+//------------------------------------------------------------------------------
+// Button.scss.
+//------------------------------------------------------------------------------
+
+%btn,
+.btn {
+  display: block;
+  padding: $btn-default-padding-horz $btn-default-padding-vert;
+
+  font-size: $font-size-large;
+  text-decoration: none;
+  color: $btn-default-text;
+  background-color: $btn-default-bg;
+  border: none;
+  border-radius: 0;
+  appearance: none;
+  cursor: pointer;
+
+  transition: background-color 200ms ease;
+
+  &:focus,
+  &:hover {
+    text-decoration: none;
+    color: $btn-default-text;
+    background-color: $btn-default-bg-hover;
+  }
+
+  &:active {
+    background-color: $btn-default-bg-active;
+  }
+
+  p & {
+    display: inline-block;
+  }
+}
+
+.btn__gray {
+  font-weight: 500;
+  color: $btn-gray-text;
+  background-color: $btn-gray-bg;
+
+  &:hover,
+  &:focus {
+    color: $btn-gray-text-hover;
+    background-color: $btn-gray-bg-hover;
+  }
+}
+
+.btn__cta {
+  display: inline-flex;
+  align-items: center;
+  padding-top: $btn-default-padding-horz-icon;
+  padding-bottom: $btn-default-padding-horz-icon;
+
+  font-weight: 500;
+  color: $btn-orange-text;
+  background-color: $btn-orange-bg;
+
+  > svg {
+    box-sizing: content-box;
+    flex-shrink: 0;
+    width: (36 / 20) + em;
+    height: (36 / 20) + em;
+    margin-right: 1em;
+    padding-right: 1em;
+
+    color: $btn-orange-icon;
+    border-right: $border-width-1 solid $btn-orange-text;
+  }
+
+  &:hover,
+  &:focus {
+    color: $btn-orange-text-hover;
+    background-color: $btn-orange-bg-hover;
+
+    > svg {
+      color: $btn-orange-text-hover;
+    }
+  }
+}
+
+.btnlink {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: auto;
+  padding-top: $btnlink-default-padding-horz-1;
+  padding-bottom: $btnlink-default-padding-horz-1;
+
+  text-decoration: none;
+
+  // @todo remove svg when btnlink__readmore gets a svg class.
+  > svg {
+    @extend %icon;
+    @extend %icon__arrow--thick;
+  }
+
+  // @todo remove svg when btnlink__readmore gets a svg class.
+  > svg,
+  .icon {
+    margin-left: $margin-default-1;
+
+    transition: transform 100ms ease;
+  }
+
+  &:hover,
+  &:focus {
+    // @todo remove svg when btnlink__readmore gets a svg class.
+    > svg,
+    .icon {
+      transform: translateX(.3em);
+    }
+  }
+
+  p & {
+    display: inline-flex;
+
+    &:after {
+      content: " ";
+      display: block; // IE11 win8.1 fix.
+      width: (25 / 18) + em;
+      height: (10 / 18) + em;
+      margin-left: $margin-default-1;
+
+      background-image: url(../images/svg/icon-arrow-thick-blue.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+
+      transition: transform 100ms ease;
+    }
+
+    &:hover,
+    &:focus {
+      &:after {
+        background-image: url(../images/svg/icon-arrow-thick-bluedark.svg);
+
+        transform: translateX(.3em);
+      }
+    }
+
+    .wrapper-footer & {
+      display: flex;
+
+      &:after {
+        background-image: url(../images/svg/icon-arrow-thick-white.svg);
+      }
+
+      &:hover,
+      &:focus {
+        &:after {
+          background-image: url(../images/svg/icon-arrow-thick-orange.svg);
+        }
+      }
+    }
+  }
+}
+
+.btnlink--thick {
+  font-size: $font-size-large;
+  font-weight: 500;
+
+  &:last-child {
+    margin-bottom: -$margin-default-1;
+  }
+}
+
+//------------------------------------------------------------------------------
+// Expandable menu button.
+//------------------------------------------------------------------------------
+.btn__menu {
+  min-width: $btn-menu-width;
+  margin-right: -$site-padding-1;
+  padding: $btn-menu-padding-horz $site-padding-1 $btn-menu-padding-horz $btn-menu-padding-vert;
+
+  font-size: $btn-menu-fontsize;
+  text-transform: uppercase;
+
+  .icon {
+    margin-left: 1em;
+
+    transition: transform 200ms ease;
+  }
+
+  &:hover,
+  &:focus {
+    .icon__menu {
+      transform: scaleY(1.2);
+    }
+
+    .icon__close {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+.btn__menu--span {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn__menu--expanded {
+  display: none;
+}
+
+.r-header-navigation--expanded {
+  .btn__menu--collapsed {
+    display: none;
+  }
+
+  .btn__menu--expanded {
+    display: flex;
+  }
+}
+
+//------------------------------------------------------------------------------
+// Print button.
+//------------------------------------------------------------------------------
+.btn--print {
+  color: $btn-orange-text;
+  background-color: $btn-orange-bg;
+
+  &:focus,
+  &:hover {
+    color: $btn-orange-text;
+    background-color: $btn-orange-bg-hover;
+  }
+
+  &:active {
+    color: $btn-orange-text;
+    background-color: $btn-orange-bg-active;
+  }
+}
+
+//------------------------------------------------------------------------------
+// Icon button.
+//------------------------------------------------------------------------------
+.btn--icon {
+  &:before {
+    content: " ";
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    margin-right: $margin-default-3/2;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    border-right: $border-width-1 $color-font-base;
+  }
+
+  &.btn--print {
+    &:before {
+      content: "P";
+    }
+  }
+}
+
+.btnlink__directlink {
+  padding-top: $btn-directlink-padding-horz;
+  padding-bottom: $btn-directlink-padding-horz;
+}
+
+@include mq($until: bp-tablet) {
+  .btn__search {
+    box-shadow: -$pixel-1 0 $pixel-2 rgba($color-black-1, .25);
+  }
+}
+
+@include mq(bp-tablet) {
+  .btn__menu {
+    display: none;
+  }
+
+  .btnlink {
+    padding-top: $btnlink-default-padding-horz-2;
+    padding-bottom: $btnlink-default-padding-horz-2;
+  }
+
+  .btnlink__directlink {
+    padding: $btn-default-padding-horz $btn-default-padding-vert;
+
+    text-decoration: none;
+    color: $btn-default-text;
+    background-color: $btn-default-bg;
+    border: none;
+    border-radius: 0;
+    appearance: none;
+    cursor: pointer;
+
+    transition: background-color 200ms ease;
+
+    &:focus,
+    &:hover {
+      color: $btn-default-text;
+      background-color: $btn-default-bg-hover;
+    }
+
+    &:active {
+      background-color: $btn-default-bg-active;
+    }
+
+    .icon {
+      display: none;
+    }
+  }
+}
