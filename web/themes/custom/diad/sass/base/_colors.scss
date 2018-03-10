@@ -14,24 +14,12 @@ $color-white-1:                   #fff;
 
 // Grays.
 
-// Delft lightgray. (regions, icons footer).
 $color-gray-1:                    #ebedee;
-$color-gray-2:                    #d8d8d8;
+$color-gray-2:                    #404e54;
 $color-gray-3:                    #818181;
-// Tile border color.
 $color-gray-3:                    #dadada;
-// Footer text/icon (not headings).
 $color-gray-4:                    #e6e8e9;
-$color-gray-5:                    #454545;
-
-$gray-base:        #000 !default;
-
-// nader te bepalen
-$gray-darker:	   lighten($gray-base, 13.5%) !default; // #222
-$gray-dark:		   lighten($gray-base, 20%) !default;   // #333
-$gray:			   lighten($gray-base, 33.5%) !default; // #555
-$gray-light:	   lighten($gray-base, 46.7%) !default; // #777
-$gray-lighter:	   lighten($gray-base, 93.5%) !default; // #eee
+$color-gray-5:                    #404e54;
 
 // Font declarations
 $font-default: 'Avenir LT W01_55 Roman1475520', sans-serif;
@@ -238,7 +226,7 @@ $color-kcc-bg:                    $color-gray-5;
 
 // Region colors.
 $color-l-top:                     $color-white-1;
-$color-l-header:                  $color-gray-1;
+$color-l-header:                  $color-blue-1;
 $color-l-hero:                    $color-blue-5;
 $color-l-breadcrumb:              $color-blue-1;
 $color-l-above-content:           $color-gray-1;
@@ -247,8 +235,8 @@ $color-l-content-top:             $color-gray-1;
 $color-l-content:                 $color-white-1;
 $color-l-content-bottom:          $color-gray-1;
 $color-l-below-content:           $color-gray-1;
-$color-l-footer-first:            $color-blue-1;
-$color-l-footer-second:           $color-white-1;
+$color-l-footer-first:            $color-gray-5;
+$color-l-footer-second:           $color-gray-5;
 
 // custom colors.
 $color-mark:                      $color-yellow-1;

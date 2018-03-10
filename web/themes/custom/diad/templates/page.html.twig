@@ -78,7 +78,7 @@
 
     {% if page.content or page.sidebar_first or page.sidebar_second %}
       <div class="l-color l-content">
-        <div class="l-site-width l-content-inner">
+        <div class="l-content-inner">
 
           {% if page.content %}
             <div class="r-content r-content-main" role="complementary">
@@ -86,12 +86,12 @@
             </div>
           {% endif %}
 
-          {% if page.sidebar_first or page.sidebar_second %}
-            <aside class="r-content r-content-sidebar" role="complementary">
-              {{ page.sidebar_first }}
-              {{ page.sidebar_second }}
-            </aside>
-          {% endif %}
+          {#{% if page.sidebar_first or page.sidebar_second %}#}
+            {#<aside class="r-content r-content-sidebar" role="complementary">#}
+              {#{{ page.sidebar_first }}#}
+              {#{{ page.sidebar_second }}#}
+            {#</aside>#}
+          {#{% endif %}#}
 
         </div>
       </div>

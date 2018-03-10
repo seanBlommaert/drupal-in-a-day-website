@@ -123,8 +123,6 @@
   margin-left: auto;
   padding-right: $site-padding-1;
   padding-left: $site-padding-1;
-
-  background-color: $color-gray-3;
 }
 
 @include mq(bp-tablet) {
@@ -290,6 +288,7 @@
     display: flex;
 
     padding-top: $header-padding-top-2;
+    padding-bottom: $header-padding-top-2;
   }
 
   .l-hero-inner {
