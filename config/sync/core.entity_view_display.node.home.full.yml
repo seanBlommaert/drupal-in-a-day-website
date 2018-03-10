@@ -5,7 +5,6 @@ dependencies:
   config:
     - core.entity_view_mode.node.full
     - field.field.node.home.field_content
-    - field.field.node.home.field_hero
     - node.type.home
   module:
     - ds

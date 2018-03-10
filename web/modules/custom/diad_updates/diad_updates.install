@@ -1,0 +1,28 @@
+<?php
+/**
+ * @file
+ * Update hooks for Drupal in a Day module.
+ */
+
+/**
+ * Run first update on install.
+ */
+function diad_updates_install () {
+  diad_updates_update_8001();
+}
+
+/**
+ * Clean up removed modules and delete all hero paragraphs.
+ */
+function diad_updates_update_8001() {
+  // Delete hero paragraphs.
+  $hero_paragraphs = \Drupal::entityTypeManager()->getStorage('paragraph')->loadByProperties(['type' => 'hero']);
+  foreach ($hero_paragraphs as $hero_paragraph) {
+    $hero_paragraph->delete();
+  }
+  // Fix message for missing modules.
+  \Drupal::database()->delete('key_value')
+    ->condition('collection', 'system.schema')
+    ->condition('name', ['coffee', 'minimal'], 'IN')
+    ->execute();
+}
