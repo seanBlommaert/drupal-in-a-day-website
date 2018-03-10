@@ -1,20 +1,19 @@
-uuid: 41b36659-658d-485f-b9fd-39e6dbbf9712
+uuid: f0dbf1ae-3078-45ef-9d11-696e90b41e4b
 langcode: en
 status: true
 dependencies:
   module:
     - entity_reference_revisions
-    - node
     - paragraphs
-id: node.field_hero
-field_name: field_hero
-entity_type: node
+id: paragraph.field_content
+field_name: field_content
+entity_type: paragraph
 type: entity_reference_revisions
 settings:
   target_type: paragraph
 module: entity_reference_revisions
 locked: false
-cardinality: 1
+cardinality: -1
 translatable: true
 indexes: {  }
 persist_with_no_fields: false

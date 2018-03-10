@@ -1,7 +1,0 @@
-uuid: 75ce20a8-8cfe-4dd8-8285-2316a30fed92
-langcode: en
-status: true
-dependencies: {  }
-id: hero
-label: Hero
-behavior_plugins: {  }

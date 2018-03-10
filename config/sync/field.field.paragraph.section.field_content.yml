@@ -1,21 +1,22 @@
-uuid: 245517db-34c3-475b-a906-df9b0d67176d
+uuid: c8fd69c4-2c48-460d-bc3d-d52c5529d64b
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_content
-    - node.type.home
+    - field.storage.paragraph.field_content
     - paragraphs.paragraphs_type.section
+    - paragraphs.paragraphs_type.teaser
+    - paragraphs.paragraphs_type.view
   module:
     - entity_reference_revisions
-id: node.home.field_content
+id: paragraph.section.field_content
 field_name: field_content
-entity_type: node
-bundle: home
+entity_type: paragraph
+bundle: section
 label: Content
 description: ''
 required: false
-translatable: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
@@ -23,36 +24,37 @@ settings:
   handler_settings:
     negate: 0
     target_bundles:
-      section: section
+      teaser: teaser
+      view: view
     target_bundles_drag_drop:
-      faq:
-        weight: 11
+      teaser:
+        enabled: true
+        weight: -21
+      view:
+        enabled: true
+        weight: -20
+      text:
+        weight: -19
         enabled: false
       image:
-        weight: 13
+        weight: -18
         enabled: false
       links:
-        weight: 14
+        weight: -17
         enabled: false
-      organiser:
-        weight: 15
-        enabled: false
-      programme:
-        weight: 16
+      faq:
+        weight: -16
         enabled: false
       section:
-        enabled: true
-        weight: 16
+        weight: -15
+        enabled: false
+      organiser:
+        weight: -14
+        enabled: false
+      programme:
+        weight: -13
+        enabled: false
       sponsor:
-        weight: 17
-        enabled: false
-      teaser:
-        weight: 18
-        enabled: false
-      text:
-        weight: 19
-        enabled: false
-      view:
-        weight: 20
+        weight: -12
         enabled: false
 field_type: entity_reference_revisions

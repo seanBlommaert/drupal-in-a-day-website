@@ -4,7 +4,6 @@ status: true
 dependencies:
   config:
     - field.field.node.home.field_content
-    - field.field.node.home.field_hero
     - node.type.home
   module:
     - entity_reference_revisions
@@ -22,15 +21,6 @@ content:
       link: ''
     third_party_settings: {  }
     type: entity_reference_revisions_entity_view
-    region: content
-  field_hero:
-    type: entity_reference_revisions_entity_view
-    weight: 101
-    label: above
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
     region: content
   links:
     weight: 100
