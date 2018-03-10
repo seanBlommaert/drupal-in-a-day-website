@@ -5,14 +5,16 @@
 //------------------------------------------------------------------------------
 // default menu styling.
 //------------------------------------------------------------------------------
-.menu {
-  @extend %reset-list;
+.site-wrapper { // temporary.
+  .menu {
+    @extend %reset-list;
+  }
 }
 
 //------------------------------------------------------------------------------
 // Main menu.
 //------------------------------------------------------------------------------
-.menu--main {
+.site-wrapper { // temporary.
   .menu {
     display: flex;
   }
@@ -24,6 +26,8 @@
       display: block;
       padding: 1em;
 
+      text-decoration: none;
+      font-weight: 500;
       color: $color-white-1;
 
       &:hover,
@@ -34,4 +38,3 @@
     }
   }
 }
-

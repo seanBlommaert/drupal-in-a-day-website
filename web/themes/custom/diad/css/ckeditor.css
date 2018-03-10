@@ -1,62 +1,122 @@
 @charset "UTF-8";
 @font-face {
-  font-family: "Gill Sans";
+  font-family: "Avenir LT Std";
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  font-variant: normal;
+  font-display: swap;
+  src: url("../fonts/AvenirLTStd-Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Avenir LT Std";
   font-weight: 400;
   font-style: normal;
   font-stretch: normal;
   font-variant: normal;
   font-display: swap;
-  src: url("../fonts/3593ED_3_0.woff2") format("woff2"), url("../fonts/3593ED_3_0.woff") format("woff"), url("../fonts/3593ED_3_0.ttf") format("truetype");
+  src: url("../fonts/AvenirLTStd-Book.woff") format("woff");
 }
 
 @font-face {
-  font-family: "Gill Sans";
+  font-family: "Avenir LT Std";
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  font-variant: normal;
+  font-display: swap;
+  src: url("../fonts/AvenirLTStd-Roman.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Avenir LT Std";
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  font-variant: normal;
+  font-display: swap;
+  src: url("../fonts/AvenirLTStd-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Avenir LT Std";
+  font-weight: 800;
+  font-style: normal;
+  font-stretch: normal;
+  font-variant: normal;
+  font-display: swap;
+  src: url("../fonts/AvenirLTStd-Heavy.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Avenir LT Std";
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  font-variant: normal;
+  font-display: swap;
+  src: url("../fonts/AvenirLTStd-Black.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Avenir LT Std";
+  font-weight: 300;
+  font-style: italic;
+  font-stretch: normal;
+  font-variant: normal;
+  font-display: swap;
+  src: url("../fonts/AvenirLTStd-LightOblique.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Avenir LT Std";
   font-weight: 400;
   font-style: italic;
   font-stretch: normal;
   font-variant: normal;
   font-display: swap;
-  src: url("../fonts/3593ED_4_0.woff2") format("woff2"), url("../fonts/3593ED_4_0.woff") format("woff"), url("../fonts/3593ED_4_0.ttf") format("truetype");
+  src: url("../fonts/AvenirLTStd-BookOblique.woff") format("woff");
 }
 
 @font-face {
-  font-family: "Gill Sans";
-  font-weight: 500;
-  font-style: normal;
-  font-stretch: normal;
-  font-variant: normal;
-  font-display: swap;
-  src: url("../fonts/3593ED_9_0.woff2") format("woff2"), url("../fonts/3593ED_9_0.woff") format("woff"), url("../fonts/3593ED_9_0.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Gill Sans";
+  font-family: "Avenir LT Std";
   font-weight: 500;
   font-style: italic;
   font-stretch: normal;
   font-variant: normal;
   font-display: swap;
-  src: url("../fonts/3593ED_C_0.woff2") format("woff2"), url("../fonts/3593ED_C_0.woff") format("woff"), url("../fonts/3593ED_C_0.ttf") format("truetype");
+  src: url("../fonts/AvenirLTStd-Oblique.woff") format("woff");
 }
 
 @font-face {
-  font-family: "Gill Sans";
-  font-weight: 200;
-  font-style: normal;
-  font-stretch: normal;
-  font-variant: normal;
-  font-display: swap;
-  src: url("../fonts/3593ED_11_0.woff2") format("woff2"), url("../fonts/3593ED_11_0.woff") format("woff"), url("../fonts/3593ED_11_0.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Gill Sans";
-  font-weight: 200;
+  font-family: "Avenir LT Std";
+  font-weight: 600;
   font-style: italic;
   font-stretch: normal;
   font-variant: normal;
   font-display: swap;
-  src: url("../fonts/3593ED_12_0.woff2") format("woff2"), url("../fonts/3593ED_12_0.woff") format("woff"), url("../fonts/3593ED_12_0.ttf") format("truetype");
+  src: url("../fonts/AvenirLTStd-MediumOblique.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Avenir LT Std";
+  font-weight: 700;
+  font-style: italic;
+  font-stretch: normal;
+  font-variant: normal;
+  font-display: swap;
+  src: url("../fonts/AvenirLTStd-HeavyOblique.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Avenir LT Std";
+  font-weight: 900;
+  font-style: italic;
+  font-stretch: normal;
+  font-variant: normal;
+  font-display: swap;
+  src: url("../fonts/AvenirLTStd-BlackOblique.woff") format("woff");
 }
 
 h1 {
@@ -199,7 +259,7 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: "Gill Sans", arial, helvetica, sans-serif;
+  font-family: "Avenir LT Std", sans-serif;
   font-size: 1.125rem;
   line-height: 1.33333;
   margin: 0;
@@ -330,16 +390,16 @@ h6:last-child, table:last-child {
 
 ::-moz-selection {
   color: #fff;
-  background: #2BA9E0;
+  background: #2ba9e0;
 }
 
 ::selection {
   color: #fff;
-  background: #2BA9E0;
+  background: #2ba9e0;
 }
 
 :focus {
-  outline-color: #2BA9E0;
+  outline-color: #2ba9e0;
 }
 
 html {
@@ -349,7 +409,7 @@ html {
 body {
   height: 100%;
   margin: 0;
-  font-family: "Gill Sans", arial, helvetica, sans-serif;
+  font-family: "Avenir LT Std", sans-serif;
   font-size: 112.5%;
   line-height: 1.33333;
   color: #000;
@@ -358,7 +418,7 @@ body {
 }
 
 a {
-  color: #2BA9E0;
+  color: #2ba9e0;
 }
 
 a:active {
@@ -366,7 +426,7 @@ a:active {
 }
 
 a:focus, a:hover {
-  color: #2BA9E0;
+  color: #2ba9e0;
 }
 
 p {
@@ -382,8 +442,8 @@ h5,
 h6 {
   margin-top: .866666em;
   margin-bottom: .866666em;
-  font-weight: 500;
-  color: #2BA9E0;
+  font-weight: 700;
+  color: #2ba9e0;
 }
 
 h1 {
@@ -434,7 +494,7 @@ h6 {
 }
 
 hr {
-  color: #2BA9E0;
+  color: #2ba9e0;
   border-style: solid;
 }
 
@@ -450,7 +510,7 @@ table {
   text-align: left;
   border-collapse: collapse;
   border-spacing: 0;
-  border-color: #2BA9E0;
+  border-color: #2ba9e0;
 }
 
 caption {
@@ -458,17 +518,17 @@ caption {
   font-size: 1.25rem;
   font-weight: 500;
   text-align: left;
-  color: #2BA9E0;
+  color: #2ba9e0;
 }
 
 tr {
-  border-bottom: 0.0625rem solid #2BA9E0;
+  border-bottom: 0.0625rem solid #2ba9e0;
 }
 
 th {
   padding: 0.625rem;
   font-weight: 500;
-  color: #2BA9E0;
+  color: #2ba9e0;
 }
 
 th:first-child {
@@ -497,7 +557,7 @@ blockquote {
 blockquote:before, blockquote:after {
   position: absolute;
   font-size: 2em;
-  color: #2BA9E0;
+  color: #2ba9e0;
 }
 
 blockquote:before {
@@ -528,18 +588,6 @@ blockquote:after {
 .icon__close {
   width: 2.06667em;
   height: 2.06667em;
-}
-
-
-.icon__arrow--thin {
-  width: 1.38889em;
-  height: 0.55556em;
-}
-
-
-.icon__arrow--thick {
-  width: 1.25em;
-  height: 0.55em;
 }
 
 

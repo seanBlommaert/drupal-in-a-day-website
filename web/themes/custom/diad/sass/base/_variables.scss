@@ -35,8 +35,16 @@ $pixel-8:                         rem(8px);
 $pixel-9:                         rem(9px);
 $pixel-10:                        rem(10px);
 
+// Font declarations
+$font-default: "Avenir LT Std";
+//$font-default: "Avenir LT W01_55 Roman1475520";
+//$font-light: "Avenir LT W01_35 Light_1475502";
+//$font-book: "Avenir LT W01_45 Book1475508";
+//$font-medium: "Avenir LT W01_65 Medium1475532";
+//$font-heavy: "Avenir LT W01_85 Heavy1475544";
+
 // Fonts.
-$base-font-family:                "Gill Sans", arial, helvetica, sans-serif;
+$base-font-family:                $font-default, sans-serif;
 
 // HTML font size.
 $base-font-size:                  112.5%;
@@ -128,7 +136,6 @@ $btn-menu-fontsize:               rem(15px);
 $menu-item-padding:               rem(17.5px);
 $menu-item-fontsize-1:            rem(17px);
 $menu-item-fontsize-2:            rem(19px);
-$menu-item-mydelft-fontsize-1:    rem(21px);
 
 $menu-mobile-transition-time:     400ms;
 
@@ -236,8 +243,8 @@ $contactblock-icon-size:          rem(20px);
 // Logo.
 $logo-width-1:                    rem(95.23px);
 $logo-height-1:                   rem(28px);
-$logo-width-2:                    rem(132.66px);
-$logo-height-2:                   rem(39px);
+$logo-width-2:                    rem(162px);
+$logo-height-2:                   rem(70px);
 
 // Pagenav.
 $pagenav-margin-bottom:           rem(2px);

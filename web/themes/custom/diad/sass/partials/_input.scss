@@ -1,0 +1,21 @@
+//------------------------------------------------------------------------------
+// input.scss.
+//------------------------------------------------------------------------------
+input {
+  max-width: 100%;
+  padding: $input-default-padding-horz $input-default-padding-vert;
+
+  background-color: $input-color-bg;
+  border: $border-width-1 solid $input-color-border;
+
+  transition: border-color 100ms ease;
+
+  &:hover {
+    border-color: $input-color-border-hover;
+  }
+
+  &:focus {
+    border-color: $input-color-border-focus;
+    outline: $border-width-1 solid $input-color-border-focus;
+  }
+}

@@ -9,6 +9,10 @@
   }
 }
 
+.dialog-off-canvas-main-canvas {
+  height: 100%; // Let flexbox do it's magic.
+}
+
 // Entire site wrapper (without admin menu, etc).
 .site-wrapper {
   // The wrapper is flex for the sticky footer.
@@ -37,6 +41,8 @@
   flex-shrink: 0;
   // Make footer sticky.
   margin-top: auto;
+
+  background-color: $color-l-footer;
 
   table {
     margin-top: 0;
@@ -101,7 +107,16 @@
     top: 0;
     flex-shrink: 0;
 
+    .toolbar-fixed & {
+      top: $menu-admin-height;
+    }
+
+    .toolbar-tray-open.toolbar-fixed & {
+      top: $menu-admin-height-expanded;
+    }
+
     .toolbar-tray-open.toolbar-vertical.toolbar-fixed & {
+      top: $menu-admin-height;
       left: $menu-admin-width-expanded;
     }
   }
@@ -111,7 +126,9 @@
 //------------------------------------------------------------------------------
 
 // Default site centering.
+.node, // @todo remove ugly .node, just very temporary, sorry, unicorn smile.
 .l-site-width {
+  width: 100%;
   max-width: $site-width-5;
   margin-right: auto;
   margin-left: auto;
@@ -182,7 +199,6 @@
   padding-top: $content-padding;
   padding-bottom: $content-padding;
 
-  background-color: $color-l-footer-first;
 
   * {
     color: $color-white-1;
@@ -204,7 +220,6 @@
 }
 
 .l-footer-second {
-  background-color: $color-l-footer-second;
 }
 
 // layout inner styling.
@@ -268,7 +283,7 @@
     overflow: auto;
 
     color: $color-white-1;
-    background-color: $color-blue-3;
+    background-color: $color-blue-1;
 
     .adminimal-admin-toolbar & {
       top: $menu-admin-height + $header-height-1;
@@ -312,4 +327,8 @@
     align-self: flex-end;
     flex-direction: row;
   }
+}
+
+.node {
+  padding: $site-padding-1;
 }

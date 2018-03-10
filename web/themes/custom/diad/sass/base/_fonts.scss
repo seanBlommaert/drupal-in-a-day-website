@@ -2,90 +2,125 @@
 // Fonts.scss.
 //------------------------------------------------------------------------------
 
-$font-directory: "../fonts"!default;
+$font-directory: "../fonts" !default;
 
-// Gill Sans
-//------------------------------------------------------------------------------
-// Book
 @font-face {
-  font-family: "Gill Sans";
+  font-family: "Avenir LT Std";
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  font-variant: normal;
+  font-display: swap;
+  src: url("#{$font-directory}/AvenirLTStd-Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Avenir LT Std";
   font-weight: 400;
   font-style: normal;
   font-stretch: normal;
   font-variant: normal;
   font-display: swap;
-  src:
-    url("#{$font-directory}/3593ED_3_0.woff2") format("woff2"),
-    url("#{$font-directory}/3593ED_3_0.woff") format("woff"),
-    url("#{$font-directory}/3593ED_3_0.ttf") format("truetype");
+  src: url("#{$font-directory}/AvenirLTStd-Book.woff") format("woff");
 }
 
-// Book Italic
 @font-face {
-  font-family: "Gill Sans";
+  font-family: "Avenir LT Std";
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  font-variant: normal;
+  font-display: swap;
+  src: url("#{$font-directory}/AvenirLTStd-Roman.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Avenir LT Std";
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  font-variant: normal;
+  font-display: swap;
+  src: url("#{$font-directory}/AvenirLTStd-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Avenir LT Std";
+  font-weight: 800;
+  font-style: normal;
+  font-stretch: normal;
+  font-variant: normal;
+  font-display: swap;
+  src: url("#{$font-directory}/AvenirLTStd-Heavy.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Avenir LT Std";
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  font-variant: normal;
+  font-display: swap;
+  src: url("#{$font-directory}/AvenirLTStd-Black.woff") format("woff");
+}
+
+
+@font-face {
+  font-family: "Avenir LT Std";
+  font-weight: 300;
+  font-style: italic;
+  font-stretch: normal;
+  font-variant: normal;
+  font-display: swap;
+  src: url("#{$font-directory}/AvenirLTStd-LightOblique.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Avenir LT Std";
   font-weight: 400;
   font-style: italic;
   font-stretch: normal;
   font-variant: normal;
   font-display: swap;
-  src:
-    url("#{$font-directory}/3593ED_4_0.woff2") format("woff2"),
-    url("#{$font-directory}/3593ED_4_0.woff") format("woff"),
-    url("#{$font-directory}/3593ED_4_0.ttf") format("truetype");
+  src: url("#{$font-directory}/AvenirLTStd-BookOblique.woff") format("woff");
 }
 
-// Medium
 @font-face {
-  font-family: "Gill Sans";
-  font-weight: 500;
-  font-style: normal;
-  font-stretch: normal;
-  font-variant: normal;
-  font-display: swap;
-  src:
-    url("#{$font-directory}/3593ED_9_0.woff2") format("woff2"),
-    url("#{$font-directory}/3593ED_9_0.woff") format("woff"),
-    url("#{$font-directory}/3593ED_9_0.ttf") format("truetype");
-}
-
-// Medium Italic
-@font-face {
-  font-family: "Gill Sans";
+  font-family: "Avenir LT Std";
   font-weight: 500;
   font-style: italic;
   font-stretch: normal;
   font-variant: normal;
   font-display: swap;
-  src:
-    url("#{$font-directory}/3593ED_C_0.woff2") format("woff2"),
-    url("#{$font-directory}/3593ED_C_0.woff") format("woff"),
-    url("#{$font-directory}/3593ED_C_0.ttf") format("truetype");
+  src: url("#{$font-directory}/AvenirLTStd-Oblique.woff") format("woff");
 }
 
-// Light
 @font-face {
-  font-family: "Gill Sans";
-  font-weight: 200;
-  font-style: normal;
-  font-stretch: normal;
-  font-variant: normal;
-  font-display: swap;
-  src:
-    url("#{$font-directory}/3593ED_11_0.woff2") format("woff2"),
-    url("#{$font-directory}/3593ED_11_0.woff") format("woff"),
-    url("#{$font-directory}/3593ED_11_0.ttf") format("truetype");
-}
-
-// Light Italic
-@font-face {
-  font-family: "Gill Sans";
-  font-weight: 200;
+  font-family: "Avenir LT Std";
+  font-weight: 600;
   font-style: italic;
   font-stretch: normal;
   font-variant: normal;
   font-display: swap;
-  src:
-    url("#{$font-directory}/3593ED_12_0.woff2") format("woff2"),
-    url("#{$font-directory}/3593ED_12_0.woff") format("woff"),
-    url("#{$font-directory}/3593ED_12_0.ttf") format("truetype");
+  src: url("#{$font-directory}/AvenirLTStd-MediumOblique.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Avenir LT Std";
+  font-weight: 700;
+  font-style: italic;
+  font-stretch: normal;
+  font-variant: normal;
+  font-display: swap;
+  src: url("#{$font-directory}/AvenirLTStd-HeavyOblique.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Avenir LT Std";
+  font-weight: 900;
+  font-style: italic;
+  font-stretch: normal;
+  font-variant: normal;
+  font-display: swap;
+  src: url("#{$font-directory}/AvenirLTStd-BlackOblique.woff") format("woff");
 }

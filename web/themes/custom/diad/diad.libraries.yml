@@ -5,26 +5,7 @@ global-styling:
       css/style.css: {}
   js:
     js/diad.js: {}
+    scripts/svgxuse.min.js: {}
   dependencies:
+    - core/drupal
     - core/jquery
-
-fonts-com:
-  js:
-    //fast.fonts.net/jsapi/fa54029e-acb9-4cae-afda-519fe2ddbc1a.js: { type: external, minified: true }
-
-bootstrap4:
-  version: 4.0.0-beta
-  css:
-    theme:
-      //maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css: { type: external, minified: true }
-  js:
-    //cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js: { type: external, minified: true }
-    //maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js: { type: external, minified: true }
-  dependencies:
-    - core/jquery
-
-fontawesome:
-  version: 4.7.0
-  css:
-    theme:
-      //maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css: { type: external, minified: true }

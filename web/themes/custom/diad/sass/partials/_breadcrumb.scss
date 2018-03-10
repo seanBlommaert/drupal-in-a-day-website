@@ -1,0 +1,59 @@
+//------------------------------------------------------------------------------
+// Breadcrumbs.scss.
+//------------------------------------------------------------------------------
+
+.breadcrumbs {
+  @extend %reset-list;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-right: -$breadcrumb-padding;
+  margin-left: -$breadcrumb-padding;
+
+  background-color: $color-blue-1;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@include mq($until: bp-desktop) {
+  .breadcrumbs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+// Shared class between __link and __last.
+.breadcrumb {
+  @extend %reset-list;
+  display: block;
+  padding: $breadcrumb-padding;
+
+  color: $color-white-1;
+  background-color: $color-l-breadcrumb;
+}
+
+.breadcrumb__svg {
+  margin-right: $margin-default-5 - $breadcrumb-padding;
+  margin-left: $margin-default-5 - $breadcrumb-padding;
+
+  color: $color-white-1;
+}
+
+.breadcrumb__link {
+  //@include small-arrow($color-white-1);
+  text-decoration: underline;
+  white-space: nowrap;
+
+  &:focus,
+  &:hover {
+    color: $color-white-1;
+    outline: $border-width-1 solid $color-white-1;
+    outline-offset: -.2em;
+  }
+}
+
+.breadcrumb__last {
+  font-weight: 400;
+  white-space: nowrap;
+}

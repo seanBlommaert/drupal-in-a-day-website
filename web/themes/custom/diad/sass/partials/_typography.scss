@@ -5,10 +5,6 @@
 a {
   color: $color-link-default;
 
-  //&:visited {
-  //  color: $color-link-visited;
-  //}
-
   &:active {
     color: $color-link-active;
   }
@@ -38,7 +34,7 @@ h6 {
   margin-top: .866666em;
   margin-bottom: .866666em;
 
-  font-weight: 500;
+  font-weight: 700;
   color: $color-headings;
 }
 
@@ -97,7 +93,7 @@ h6 {
 
 // Seperators.
 hr {
-  color: $color-blue-3;
+  color: $color-blue-1;
   border-style: solid;
 }
 
@@ -137,14 +133,14 @@ thead {
 }
 
 tr {
-  border-bottom: $border-width-1 solid $color-blue-3;
+  border-bottom: $border-width-1 solid $color-blue-1;
 }
 
 th {
   padding: $margin-default-2;
 
   font-weight: 500;
-  color: $color-blue-3;
+  color: $color-blue-1;
 
   &:first-child {
     padding-left: 0;
@@ -165,9 +161,6 @@ blockquote {
   quotes: "“" "”" "‘" "’";
 }
 
-q {
-}
-
 blockquote {
   position: relative;
   margin: $margin-default-4 0;
@@ -178,7 +171,7 @@ blockquote {
     position: absolute;
 
     font-size: 2em;
-    color: $color-blue-3;
+    color: $color-blue-1;
   }
 
   &:before {

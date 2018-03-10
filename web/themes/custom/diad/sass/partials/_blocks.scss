@@ -2,56 +2,12 @@
 // Block.scss.
 //------------------------------------------------------------------------------
 
-//------------------------------------------------------------------------------
-// Logo.
-//------------------------------------------------------------------------------
-.block__dvg-site-branding {
-  // Flexbox: align the logo left.
-  margin-right: auto;
-}
-
-//------------------------------------------------------------------------------
-// My delft.
-//------------------------------------------------------------------------------
-.block-mydelft {
-  margin-top: auto;
-}
-
-//------------------------------------------------------------------------------
-// Footerblock.
-//------------------------------------------------------------------------------
-.footerblock__wrapper {
-  .title {
-    margin-top: 0;
-  }
-}
-
-// Specific breakpoint for tiles.
-@include mq(bp-tile-2,  bp-tile-3) {
-  .footerblock__second {
-    order: 2;
-  }
-
-  .footerblock__fourth {
-    order: 3;
-  }
-}
-
-// Specific breakpoint for tiles.
-@include mq(bp-tile-3) {
-  .footerblock__second {
-    order: 4;
-    width: 100%;
-    max-width: 100%;
-  }
-}
-
 .logo {
   display: inline-block;
 }
 
 .logo__svg {
-  width: $logo-width-1; // IE11 svgbug.
+  //width: $logo-width-1; // IE11 svgbug.
   height: $logo-height-1;
 
   vertical-align: top;

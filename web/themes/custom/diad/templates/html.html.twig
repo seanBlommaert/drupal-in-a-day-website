@@ -26,17 +26,35 @@
 <!DOCTYPE html>
 <html{{ html_attributes }}>
   <head>
+    {# Begin font preloading #}
+    <link rel="preload" href="/{{ base_path ~ directory }}/fonts/3593ED_3_0.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/{{ base_path ~ directory }}/fonts/3593ED_4_0.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/{{ base_path ~ directory }}/fonts/3593ED_9_0.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/{{ base_path ~ directory }}/fonts/3593ED_C_0.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/{{ base_path ~ directory }}/fonts/3593ED_11_0.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/{{ base_path ~ directory }}/fonts/3593ED_12_0.woff2" as="font" type="font/woff2" crossorigin>
+    {# End font preloading #}
+    {# Begin favicon #}
+    <link rel="apple-touch-icon" sizes="180x180" href="/themes/custom/diad/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/themes/custom/diad/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/themes/custom/diad/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/themes/custom/diad/images/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/themes/custom/diad/images/favicon/safari-pinned-tab.svg" color="#2ba9e0">
+    <link rel="shortcut icon" href="/themes/custom/diad/images/favicon/favicon.ico">
+    <meta name="apple-mobile-web-app-title" content="Drupal Training Day">
+    <meta name="application-name" content="Drupal Training Day">
+    <meta name="msapplication-TileColor" content="#2ba9e0">
+    <meta name="msapplication-TileImage" content="/themes/custom/diad/images/favicon/mstile-144x144.png">
+    <meta name="msapplication-config" content="/themes/custom/diad/images/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#2ba9e0">
+    {# End favicon #}
     <head-placeholder token="{{ placeholder_token|raw }}">
     <title>{{ head_title|safe_join(' | ') }}</title>
     <css-placeholder token="{{ placeholder_token|raw }}">
     <js-placeholder token="{{ placeholder_token|raw }}">
   </head>
   <body{{ attributes }}>
-    {#
-      Keyboard navigation/accessibility link to main content section in
-      page.html.twig.
-    #}
-    <a href="#main-content" class="visually-hidden focusable">
+    <a href="#main-content" class="skip-link visually-hidden focusable">
       {{ 'Skip to main content'|t }}
     </a>
     {{ page_top }}

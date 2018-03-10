@@ -1,4 +1,3 @@
-{# Page start #}
 <div class="site-wrapper" id="site-wrapper">
   {% if page.top %}
     <section class="wrapper-root wrapper-top" id="wrapper-top">
@@ -123,24 +122,23 @@
 
   </main>
 
-  <footer class="wrapper-root wrapper-footer" id="wrapper-footer"
-          role="contentinfo">
+  <footer class="wrapper-root wrapper-footer" id="wrapper-footer" role="contentinfo">
+    <div class="l-site-width">
     {% if page.footer_first %}
       <div class="l-color l-footer-first">
-        <div class="l-site-width l-footer-first-inner">
-          <div class="footerblock__wrapper grid__tile">
-            {{ page.footer_first }}
-          </div>
-        </div>
+        {{ page.footer_first }}
       </div>
     {% endif %}
     {% if page.footer_second %}
       <div class="l-color l-footer-second">
-        <div class="l-site-width l-footer-second-inner">
-          {{ page.footer_second }}
-        </div>
+        {{ page.footer_second }}
       </div>
     {% endif %}
+    {% if page.footer_third %}
+      <div class="l-color l-footer-third">
+        {{ page.footer_third }}
+      </div>
+    {% endif %}
+    </div>
   </footer>
 </div>
-{# Page end #}

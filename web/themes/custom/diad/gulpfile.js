@@ -23,7 +23,7 @@ var fs = require('fs');
 gulp.task('default', ['styles', 'watch sass'] ,function() {
 });
 
-// Watch task
+// SCSS Watch task
 gulp.task('watch sass', [] ,function() {
   gulp.watch(['sass/**/*.scss'],['styles']);
 });
@@ -73,7 +73,7 @@ gulp.task('svg cleanup', function () {
 // svgsprite section.
 //------------------------------------------------------------------------------
 
-// Invokes the "svg pretty" and "svg sprite" task.
+// Invokes the "create svgsprite" and "svgsprite cleanup" task.
 gulp.task('create svgsprite', ['svgsprite cleanup', 'svgsprite generate sprite'] ,function(){});
 
 // Minify/optimize images using SVGO.
@@ -120,30 +120,8 @@ gulp.task('svgsprite generate sprite', function () {
 // Favicon section.
 //------------------------------------------------------------------------------
 
-// Invokes the "svg pretty" and "svg sprite" task.
-gulp.task('create favicon', ['favicon cleanup', 'generate-favicon', 'inject-favicon-markups'] ,function(){});
-
-// Minify/optimize images using SVGO.
-gulp.task('favicon cleanup', function () {
-  return gulp.src('images/favicon/*.svg')
-  .pipe(svgmin(function (file) {
-    var prefix = path.basename(file.relative, path.extname(file.relative));
-    return {
-      plugins: [
-        {cleanupIDs: {prefix: prefix + '-', minify: true}},
-        {removeViewBox: false},
-        {removeDimensions: false},
-        {sortAttrs: true},
-      ]
-    }
-  }))
-  .pipe(svgmin({
-    js2svg: {
-      pretty: true
-    }
-  }))
-  .pipe(gulp.dest('images/favicon'));
-});
+// Invokes the "svg cleanup", "inject-favicon-markups" and "generate-favicon" task.
+gulp.task('create favicon', ['svg cleanup', 'generate-favicon', 'inject-favicon-markups'] ,function(){});
 
 // File where the favicon markups are stored
 var FAVICON_DATA_FILE = 'faviconData.json';
@@ -154,33 +132,34 @@ var FAVICON_DATA_FILE = 'faviconData.json';
 // package (see the check-for-favicon-update task below).
 gulp.task('generate-favicon', function(done) {
   realFavicon.generateFavicon({
-    masterPicture: 'images/favicon/favicon-default.svg',
+    masterPicture: 'images/svg/favicon-default.svg',
     dest: 'images/favicon',
     iconsPath: '/themes/custom/diad/images/favicon',
     design: {
       ios: {
         masterPicture: {
           type: 'inline',
-          content: 'PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNjAiIGhlaWdodD0iMjYwIiB2aWV3Qm94PSIwIDAgMjYwIDI2MCI+DQogICAgPHRpdGxlPg0KICAgICAgICBGYXZpY29uIERlbGZ0DQogICAgPC90aXRsZT4NCiAgICA8cGF0aCBmaWxsPSIjZmZmIiBkPSJNMjQ1LjEgMTI1LjJjLTE5LS4xLTM0LjQtMTUuNS0zNC40LTM0LjUgMC0yLjEtMS43LTMuOC0zLjgtMy44cy0zLjggMS43LTMuOCAzLjhjLjQgMTkuMS0xNC43IDM0LjktMzMuOCAzNS4zcy0zNC45LTE0LjctMzUuMy0zMy44di0xLjVjLS4xLTIuMS0yLTMuNy00LjEtMy42LTEuOS4xLTMuNSAxLjctMy42IDMuNiAwIDE5LjEtMTUuNSAzNC41LTM0LjUgMzQuNXMtMzQuNS0xNS41LTM0LjUtMzQuNWMtLjEtMi4xLTItMy43LTQuMS0zLjYtMS45LjEtMy41IDEuNy0zLjYgMy42IDAgMTkuMS0xNS41IDM0LjUtMzQuNSAzNC41VjQ4LjRDMzQgNDguNCA0OS41IDMzIDQ5LjUgMTMuOWMuMS0yLjEgMi0zLjcgNC4xLTMuNiAxLjkuMSAzLjUgMS43IDMuNiAzLjYuMyAxOS4xIDE2LjEgMzQuMiAzNS4yIDMzLjggMTguNS0uNCAzMy40LTE1LjMgMzMuOC0zMy44LS4xLTIuMSAxLjUtNCAzLjYtNC4xIDIuMS0uMSA0IDEuNSA0LjEgMy42di41YzAgMTkuMSAxNS41IDM0LjUgMzQuNSAzNC42IDE5LjEgMCAzNC41LTE1LjUgMzQuNi0zNC41IDAtMi4xIDEuNy0zLjggMy44LTMuOHMzLjggMS43IDMuOCAzLjhjMCAxOSAxNS40IDM0LjUgMzQuNCAzNC41djc2LjdtLjEgNzYuOXYtMTIuNmgtMTYuM3YtMTloLTMuMmwtMjEgMjguNHYzLjNoNS42VjIzMGMwIDE1LjIgMTAuNiAyMC4yIDE5LjcgMjAuMiA1LjMgMCA5LjUtMS4zIDE1LjItNXYtMTMuN2MtMy45IDMuMi02LjYgNC40LTkuNiA0LjQtNC45IDAtNi43LTMuOS02LjctOS41di0yNC4zaDE2LjN6Ii8+DQogICAgPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTE3Ny40IDIwMi4xaC01Ljh2LTEyLjZoNS44di00LjJjMC0xNy4zIDExLjMtMjUuNCAyNC43LTI1LjQgMy4zIDAgNi43LjQgOS45IDEuMnYxMy4xYy0yLjItLjUtNC40LS43LTYuNi0uOC03IDAtOS41IDMuOS05LjUgMTAuM3Y1LjhoNS4zdjEyLjZoLTUuM1YyNDloLTE4LjZ2LTQ2LjlNMTQzLjQgMTYxSDE2MnY4OGgtMTguNnYtODh6bS0yNC44IDUyLjZjLS4xLTkuOC0yLjUtMTQuNy03LjMtMTQuNy00LjkgMC03LjYgNS40LTcuNiAxNC43aDE0LjltMTUuNSAzMC42Yy02LjUgNC0xNCA2LTIxLjcgNS45LTIyLjIgMC0yNy42LTE3LjgtMjcuNi0yOS44IDAtMTguNiAxMS4yLTMyLjEgMjYuNC0zMi4xIDEzLjggMCAyNC44IDEwLjYgMjQuNSAzMy44aC0zMi4xYy45IDEwLjIgNi4yIDE1LjggMTUgMTUuOCA1IDAgOS41LTEuMyAxNS41LTQuN3YxMS4xem0tOTQuNS0xMGMxNC40IDAgMTguOS0xMS4yIDE4LjktMjguOSAwLTE2LjYtNC4xLTI5LjUtMTcuOS0yOS41aC01Ljh2NTguM2w0LjguMU0xNC44IDE2MUg0MWMyNy42IDAgMzggMjEuOSAzOCA0My4zIDAgMjAuMi05LjggNDQuNy0zNyA0NC43SDE1bC0uMi04OHoiLz4NCjwvc3ZnPg0K'
+          content: 'PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNjAiIGhlaWdodD0iMjYwIiB2aWV3Qm94PSIwIDAgMjYwIDI2MCI+DQogICAgPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTEzMC4zIDIxMi40aC0uNmMtMzIuOSAwLTU5LjYtMjUuOC01OS42LTU3LjUgMC0yNy4xIDE4LjMtNDUuMyAzNy42LTY0LjYgNy45LTcuOSAxNi0xNiAyMi44LTI0LjggNi41IDguMyAxNC4xIDE2IDIxLjYgMjMuNiAxOS41IDE5LjggMzcuOCAzOC41IDM3LjggNjUuNyAwIDMxLjgtMjYuOCA1Ny42LTU5LjYgNTcuNm0yLTE3OS4zbC0yLTEzLjEtMi4yIDEzLjFjLTExIDQwLjEtNzUuNiA2My4yLTc1LjYgMTIxLjggMCA0MS41IDM0LjYgNzUuMSA3Ny4yIDc1LjFoLjZjNDIuNiAwIDc3LjItMzMuNiA3Ny4yLTc1LjEgMC01Ny45LTYzLTgyLjUtNzUuMi0xMjEuOCIvPg0KICAgIDxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik05OS45IDE0OS40SDkxYy0xIDAtMS44LjgtMS44IDEuOHY4LjljMCAxIC44IDEuOCAxLjggMS44aDguOWMxIDAgMS44LS44IDEuOC0xLjh2LTguOWMtLjEtMS0uOS0xLjgtMS44LTEuOG0zNS4xIDMzLjRoLTguOWMtMSAwLTEuOC44LTEuOCAxLjh2OC45YzAgMSAuOCAxLjggMS44IDEuOGg4LjljMSAwIDEuOC0uOCAxLjgtMS44di04LjljMC0xLS44LTEuOC0xLjgtMS44bTI5LjgtMzMuN2gtMjguMnYtMzIuNGwtNi4xLTkuMi02LjEgOC44djQ1bDQwLjMuMSA3LjMtNi4yLTcuMi02LjF6Ii8+DQo8L3N2Zz4NCg=='
         },
         pictureAspect: 'backgroundAndMargin',
-        backgroundColor: '#0078c8',
-        margin: '25%',
+        backgroundColor: '#2ba9e0',
+        margin: '18%',
         assets: {
           ios6AndPriorIcons: false,
           ios7AndLaterIcons: false,
           precomposedIcons: false,
           declareOnlyDefaultIcon: true
-        }
+        },
+        appName: 'Drupal Training Day'
       },
       desktopBrowser: {},
       windows: {
         masterPicture: {
           type: 'inline',
-          content: 'PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNjAiIGhlaWdodD0iMjYwIiB2aWV3Qm94PSIwIDAgMjYwIDI2MCI+DQogICAgPHRpdGxlPg0KICAgICAgICBGYXZpY29uIERlbGZ0DQogICAgPC90aXRsZT4NCiAgICA8cGF0aCBmaWxsPSIjZmZmIiBkPSJNMjQ1LjEgMTI1LjJjLTE5LS4xLTM0LjQtMTUuNS0zNC40LTM0LjUgMC0yLjEtMS43LTMuOC0zLjgtMy44cy0zLjggMS43LTMuOCAzLjhjLjQgMTkuMS0xNC43IDM0LjktMzMuOCAzNS4zcy0zNC45LTE0LjctMzUuMy0zMy44di0xLjVjLS4xLTIuMS0yLTMuNy00LjEtMy42LTEuOS4xLTMuNSAxLjctMy42IDMuNiAwIDE5LjEtMTUuNSAzNC41LTM0LjUgMzQuNXMtMzQuNS0xNS41LTM0LjUtMzQuNWMtLjEtMi4xLTItMy43LTQuMS0zLjYtMS45LjEtMy41IDEuNy0zLjYgMy42IDAgMTkuMS0xNS41IDM0LjUtMzQuNSAzNC41VjQ4LjRDMzQgNDguNCA0OS41IDMzIDQ5LjUgMTMuOWMuMS0yLjEgMi0zLjcgNC4xLTMuNiAxLjkuMSAzLjUgMS43IDMuNiAzLjYuMyAxOS4xIDE2LjEgMzQuMiAzNS4yIDMzLjggMTguNS0uNCAzMy40LTE1LjMgMzMuOC0zMy44LS4xLTIuMSAxLjUtNCAzLjYtNC4xIDIuMS0uMSA0IDEuNSA0LjEgMy42di41YzAgMTkuMSAxNS41IDM0LjUgMzQuNSAzNC42IDE5LjEgMCAzNC41LTE1LjUgMzQuNi0zNC41IDAtMi4xIDEuNy0zLjggMy44LTMuOHMzLjggMS43IDMuOCAzLjhjMCAxOSAxNS40IDM0LjUgMzQuNCAzNC41djc2LjdtLjEgNzYuOXYtMTIuNmgtMTYuM3YtMTloLTMuMmwtMjEgMjguNHYzLjNoNS42VjIzMGMwIDE1LjIgMTAuNiAyMC4yIDE5LjcgMjAuMiA1LjMgMCA5LjUtMS4zIDE1LjItNXYtMTMuN2MtMy45IDMuMi02LjYgNC40LTkuNiA0LjQtNC45IDAtNi43LTMuOS02LjctOS41di0yNC4zaDE2LjN6Ii8+DQogICAgPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTE3Ny40IDIwMi4xaC01Ljh2LTEyLjZoNS44di00LjJjMC0xNy4zIDExLjMtMjUuNCAyNC43LTI1LjQgMy4zIDAgNi43LjQgOS45IDEuMnYxMy4xYy0yLjItLjUtNC40LS43LTYuNi0uOC03IDAtOS41IDMuOS05LjUgMTAuM3Y1LjhoNS4zdjEyLjZoLTUuM1YyNDloLTE4LjZ2LTQ2LjlNMTQzLjQgMTYxSDE2MnY4OGgtMTguNnYtODh6bS0yNC44IDUyLjZjLS4xLTkuOC0yLjUtMTQuNy03LjMtMTQuNy00LjkgMC03LjYgNS40LTcuNiAxNC43aDE0LjltMTUuNSAzMC42Yy02LjUgNC0xNCA2LTIxLjcgNS45LTIyLjIgMC0yNy42LTE3LjgtMjcuNi0yOS44IDAtMTguNiAxMS4yLTMyLjEgMjYuNC0zMi4xIDEzLjggMCAyNC44IDEwLjYgMjQuNSAzMy44aC0zMi4xYy45IDEwLjIgNi4yIDE1LjggMTUgMTUuOCA1IDAgOS41LTEuMyAxNS41LTQuN3YxMS4xem0tOTQuNS0xMGMxNC40IDAgMTguOS0xMS4yIDE4LjktMjguOSAwLTE2LjYtNC4xLTI5LjUtMTcuOS0yOS41aC01Ljh2NTguM2w0LjguMU0xNC44IDE2MUg0MWMyNy42IDAgMzggMjEuOSAzOCA0My4zIDAgMjAuMi05LjggNDQuNy0zNyA0NC43SDE1bC0uMi04OHoiLz4NCjwvc3ZnPg0K'
+          content: 'PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNjAiIGhlaWdodD0iMjYwIiB2aWV3Qm94PSIwIDAgMjYwIDI2MCI+DQogICAgPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTEzMC4zIDIxMi40aC0uNmMtMzIuOSAwLTU5LjYtMjUuOC01OS42LTU3LjUgMC0yNy4xIDE4LjMtNDUuMyAzNy42LTY0LjYgNy45LTcuOSAxNi0xNiAyMi44LTI0LjggNi41IDguMyAxNC4xIDE2IDIxLjYgMjMuNiAxOS41IDE5LjggMzcuOCAzOC41IDM3LjggNjUuNyAwIDMxLjgtMjYuOCA1Ny42LTU5LjYgNTcuNm0yLTE3OS4zbC0yLTEzLjEtMi4yIDEzLjFjLTExIDQwLjEtNzUuNiA2My4yLTc1LjYgMTIxLjggMCA0MS41IDM0LjYgNzUuMSA3Ny4yIDc1LjFoLjZjNDIuNiAwIDc3LjItMzMuNiA3Ny4yLTc1LjEgMC01Ny45LTYzLTgyLjUtNzUuMi0xMjEuOCIvPg0KICAgIDxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik05OS45IDE0OS40SDkxYy0xIDAtMS44LjgtMS44IDEuOHY4LjljMCAxIC44IDEuOCAxLjggMS44aDguOWMxIDAgMS44LS44IDEuOC0xLjh2LTguOWMtLjEtMS0uOS0xLjgtMS44LTEuOG0zNS4xIDMzLjRoLTguOWMtMSAwLTEuOC44LTEuOCAxLjh2OC45YzAgMSAuOCAxLjggMS44IDEuOGg4LjljMSAwIDEuOC0uOCAxLjgtMS44di04LjljMC0xLS44LTEuOC0xLjgtMS44bTI5LjgtMzMuN2gtMjguMnYtMzIuNGwtNi4xLTkuMi02LjEgOC44djQ1bDQwLjMuMSA3LjMtNi4yLTcuMi02LjF6Ii8+DQo8L3N2Zz4NCg=='
         },
         pictureAspect: 'noChange',
-        backgroundColor: '#0078c8',
+        backgroundColor: '#2ba9e0',
         onConflict: 'override',
         assets: {
           windows80Ie10Tile: false,
@@ -190,20 +169,21 @@ gulp.task('generate-favicon', function(done) {
             big: false,
             rectangle: false
           }
-        }
+        },
+        appName: 'Drupal Training Day'
       },
       androidChrome: {
         masterPicture: {
           type: 'inline',
-          content: 'PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNjAiIGhlaWdodD0iMjYwIiB2aWV3Qm94PSIwIDAgMjYwIDI2MCI+DQogICAgPHRpdGxlPg0KICAgICAgICBGYXZpY29uIERlbGZ0DQogICAgPC90aXRsZT4NCiAgICA8cGF0aCBmaWxsPSIjZmZmIiBkPSJNMjQ1LjEgMTI1LjJjLTE5LS4xLTM0LjQtMTUuNS0zNC40LTM0LjUgMC0yLjEtMS43LTMuOC0zLjgtMy44cy0zLjggMS43LTMuOCAzLjhjLjQgMTkuMS0xNC43IDM0LjktMzMuOCAzNS4zcy0zNC45LTE0LjctMzUuMy0zMy44di0xLjVjLS4xLTIuMS0yLTMuNy00LjEtMy42LTEuOS4xLTMuNSAxLjctMy42IDMuNiAwIDE5LjEtMTUuNSAzNC41LTM0LjUgMzQuNXMtMzQuNS0xNS41LTM0LjUtMzQuNWMtLjEtMi4xLTItMy43LTQuMS0zLjYtMS45LjEtMy41IDEuNy0zLjYgMy42IDAgMTkuMS0xNS41IDM0LjUtMzQuNSAzNC41VjQ4LjRDMzQgNDguNCA0OS41IDMzIDQ5LjUgMTMuOWMuMS0yLjEgMi0zLjcgNC4xLTMuNiAxLjkuMSAzLjUgMS43IDMuNiAzLjYuMyAxOS4xIDE2LjEgMzQuMiAzNS4yIDMzLjggMTguNS0uNCAzMy40LTE1LjMgMzMuOC0zMy44LS4xLTIuMSAxLjUtNCAzLjYtNC4xIDIuMS0uMSA0IDEuNSA0LjEgMy42di41YzAgMTkuMSAxNS41IDM0LjUgMzQuNSAzNC42IDE5LjEgMCAzNC41LTE1LjUgMzQuNi0zNC41IDAtMi4xIDEuNy0zLjggMy44LTMuOHMzLjggMS43IDMuOCAzLjhjMCAxOSAxNS40IDM0LjUgMzQuNCAzNC41djc2LjdtLjEgNzYuOXYtMTIuNmgtMTYuM3YtMTloLTMuMmwtMjEgMjguNHYzLjNoNS42VjIzMGMwIDE1LjIgMTAuNiAyMC4yIDE5LjcgMjAuMiA1LjMgMCA5LjUtMS4zIDE1LjItNXYtMTMuN2MtMy45IDMuMi02LjYgNC40LTkuNiA0LjQtNC45IDAtNi43LTMuOS02LjctOS41di0yNC4zaDE2LjN6Ii8+DQogICAgPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTE3Ny40IDIwMi4xaC01Ljh2LTEyLjZoNS44di00LjJjMC0xNy4zIDExLjMtMjUuNCAyNC43LTI1LjQgMy4zIDAgNi43LjQgOS45IDEuMnYxMy4xYy0yLjItLjUtNC40LS43LTYuNi0uOC03IDAtOS41IDMuOS05LjUgMTAuM3Y1LjhoNS4zdjEyLjZoLTUuM1YyNDloLTE4LjZ2LTQ2LjlNMTQzLjQgMTYxSDE2MnY4OGgtMTguNnYtODh6bS0yNC44IDUyLjZjLS4xLTkuOC0yLjUtMTQuNy03LjMtMTQuNy00LjkgMC03LjYgNS40LTcuNiAxNC43aDE0LjltMTUuNSAzMC42Yy02LjUgNC0xNCA2LTIxLjcgNS45LTIyLjIgMC0yNy42LTE3LjgtMjcuNi0yOS44IDAtMTguNiAxMS4yLTMyLjEgMjYuNC0zMi4xIDEzLjggMCAyNC44IDEwLjYgMjQuNSAzMy44aC0zMi4xYy45IDEwLjIgNi4yIDE1LjggMTUgMTUuOCA1IDAgOS41LTEuMyAxNS41LTQuN3YxMS4xem0tOTQuNS0xMGMxNC40IDAgMTguOS0xMS4yIDE4LjktMjguOSAwLTE2LjYtNC4xLTI5LjUtMTcuOS0yOS41aC01Ljh2NTguM2w0LjguMU0xNC44IDE2MUg0MWMyNy42IDAgMzggMjEuOSAzOCA0My4zIDAgMjAuMi05LjggNDQuNy0zNyA0NC43SDE1bC0uMi04OHoiLz4NCjwvc3ZnPg0K'
+          content: 'PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNjAiIGhlaWdodD0iMjYwIiB2aWV3Qm94PSIwIDAgMjYwIDI2MCI+DQogICAgPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTEzMC4zIDIxMi40aC0uNmMtMzIuOSAwLTU5LjYtMjUuOC01OS42LTU3LjUgMC0yNy4xIDE4LjMtNDUuMyAzNy42LTY0LjYgNy45LTcuOSAxNi0xNiAyMi44LTI0LjggNi41IDguMyAxNC4xIDE2IDIxLjYgMjMuNiAxOS41IDE5LjggMzcuOCAzOC41IDM3LjggNjUuNyAwIDMxLjgtMjYuOCA1Ny42LTU5LjYgNTcuNm0yLTE3OS4zbC0yLTEzLjEtMi4yIDEzLjFjLTExIDQwLjEtNzUuNiA2My4yLTc1LjYgMTIxLjggMCA0MS41IDM0LjYgNzUuMSA3Ny4yIDc1LjFoLjZjNDIuNiAwIDc3LjItMzMuNiA3Ny4yLTc1LjEgMC01Ny45LTYzLTgyLjUtNzUuMi0xMjEuOCIvPg0KICAgIDxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik05OS45IDE0OS40SDkxYy0xIDAtMS44LjgtMS44IDEuOHY4LjljMCAxIC44IDEuOCAxLjggMS44aDguOWMxIDAgMS44LS44IDEuOC0xLjh2LTguOWMtLjEtMS0uOS0xLjgtMS44LTEuOG0zNS4xIDMzLjRoLTguOWMtMSAwLTEuOC44LTEuOCAxLjh2OC45YzAgMSAuOCAxLjggMS44IDEuOGg4LjljMSAwIDEuOC0uOCAxLjgtMS44di04LjljMC0xLS44LTEuOC0xLjgtMS44bTI5LjgtMzMuN2gtMjguMnYtMzIuNGwtNi4xLTkuMi02LjEgOC44djQ1bDQwLjMuMSA3LjMtNi4yLTcuMi02LjF6Ii8+DQo8L3N2Zz4NCg=='
         },
         pictureAspect: 'backgroundAndMargin',
-        margin: '25%',
-        backgroundColor: '#0078c8',
-        themeColor: '#0078c8',
+        margin: '10%',
+        backgroundColor: '#2ba9e0',
+        themeColor: '#2ba9e0',
         manifest: {
-          name: 'Gemeente Delft',
-          display: 'browser',
+          name: 'Training Day',
+          display: 'standalone',
           orientation: 'notSet',
           onConflict: 'override',
           declared: true
@@ -216,16 +196,16 @@ gulp.task('generate-favicon', function(done) {
       safariPinnedTab: {
         masterPicture: {
           type: 'inline',
-          content: 'PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNjAiIGhlaWdodD0iMjYwIiB2aWV3Qm94PSIwIDAgMjYwIDI2MCI+DQogICAgPHRpdGxlPg0KICAgICAgICBGYXZpY29uIERlbGZ0DQogICAgPC90aXRsZT4NCiAgICA8cGF0aCBmaWxsPSIjZmZmIiBkPSJNMjQ1LjEgMTI1LjJjLTE5LS4xLTM0LjQtMTUuNS0zNC40LTM0LjUgMC0yLjEtMS43LTMuOC0zLjgtMy44cy0zLjggMS43LTMuOCAzLjhjLjQgMTkuMS0xNC43IDM0LjktMzMuOCAzNS4zcy0zNC45LTE0LjctMzUuMy0zMy44di0xLjVjLS4xLTIuMS0yLTMuNy00LjEtMy42LTEuOS4xLTMuNSAxLjctMy42IDMuNiAwIDE5LjEtMTUuNSAzNC41LTM0LjUgMzQuNXMtMzQuNS0xNS41LTM0LjUtMzQuNWMtLjEtMi4xLTItMy43LTQuMS0zLjYtMS45LjEtMy41IDEuNy0zLjYgMy42IDAgMTkuMS0xNS41IDM0LjUtMzQuNSAzNC41VjQ4LjRDMzQgNDguNCA0OS41IDMzIDQ5LjUgMTMuOWMuMS0yLjEgMi0zLjcgNC4xLTMuNiAxLjkuMSAzLjUgMS43IDMuNiAzLjYuMyAxOS4xIDE2LjEgMzQuMiAzNS4yIDMzLjggMTguNS0uNCAzMy40LTE1LjMgMzMuOC0zMy44LS4xLTIuMSAxLjUtNCAzLjYtNC4xIDIuMS0uMSA0IDEuNSA0LjEgMy42di41YzAgMTkuMSAxNS41IDM0LjUgMzQuNSAzNC42IDE5LjEgMCAzNC41LTE1LjUgMzQuNi0zNC41IDAtMi4xIDEuNy0zLjggMy44LTMuOHMzLjggMS43IDMuOCAzLjhjMCAxOSAxNS40IDM0LjUgMzQuNCAzNC41djc2LjdtLjEgNzYuOXYtMTIuNmgtMTYuM3YtMTloLTMuMmwtMjEgMjguNHYzLjNoNS42VjIzMGMwIDE1LjIgMTAuNiAyMC4yIDE5LjcgMjAuMiA1LjMgMCA5LjUtMS4zIDE1LjItNXYtMTMuN2MtMy45IDMuMi02LjYgNC40LTkuNiA0LjQtNC45IDAtNi43LTMuOS02LjctOS41di0yNC4zaDE2LjN6Ii8+DQogICAgPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTE3Ny40IDIwMi4xaC01Ljh2LTEyLjZoNS44di00LjJjMC0xNy4zIDExLjMtMjUuNCAyNC43LTI1LjQgMy4zIDAgNi43LjQgOS45IDEuMnYxMy4xYy0yLjItLjUtNC40LS43LTYuNi0uOC03IDAtOS41IDMuOS05LjUgMTAuM3Y1LjhoNS4zdjEyLjZoLTUuM1YyNDloLTE4LjZ2LTQ2LjlNMTQzLjQgMTYxSDE2MnY4OGgtMTguNnYtODh6bS0yNC44IDUyLjZjLS4xLTkuOC0yLjUtMTQuNy03LjMtMTQuNy00LjkgMC03LjYgNS40LTcuNiAxNC43aDE0LjltMTUuNSAzMC42Yy02LjUgNC0xNCA2LTIxLjcgNS45LTIyLjIgMC0yNy42LTE3LjgtMjcuNi0yOS44IDAtMTguNiAxMS4yLTMyLjEgMjYuNC0zMi4xIDEzLjggMCAyNC44IDEwLjYgMjQuNSAzMy44aC0zMi4xYy45IDEwLjIgNi4yIDE1LjggMTUgMTUuOCA1IDAgOS41LTEuMyAxNS41LTQuN3YxMS4xem0tOTQuNS0xMGMxNC40IDAgMTguOS0xMS4yIDE4LjktMjguOSAwLTE2LjYtNC4xLTI5LjUtMTcuOS0yOS41aC01Ljh2NTguM2w0LjguMU0xNC44IDE2MUg0MWMyNy42IDAgMzggMjEuOSAzOCA0My4zIDAgMjAuMi05LjggNDQuNy0zNyA0NC43SDE1bC0uMi04OHoiLz4NCjwvc3ZnPg0K'
+          content: 'PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNjAiIGhlaWdodD0iMjYwIiB2aWV3Qm94PSIwIDAgMjYwIDI2MCI+DQogICAgPHBhdGggZmlsbD0iI2ZmZiIgZD0iTTEzMC4zIDIxMi40aC0uNmMtMzIuOSAwLTU5LjYtMjUuOC01OS42LTU3LjUgMC0yNy4xIDE4LjMtNDUuMyAzNy42LTY0LjYgNy45LTcuOSAxNi0xNiAyMi44LTI0LjggNi41IDguMyAxNC4xIDE2IDIxLjYgMjMuNiAxOS41IDE5LjggMzcuOCAzOC41IDM3LjggNjUuNyAwIDMxLjgtMjYuOCA1Ny42LTU5LjYgNTcuNm0yLTE3OS4zbC0yLTEzLjEtMi4yIDEzLjFjLTExIDQwLjEtNzUuNiA2My4yLTc1LjYgMTIxLjggMCA0MS41IDM0LjYgNzUuMSA3Ny4yIDc1LjFoLjZjNDIuNiAwIDc3LjItMzMuNiA3Ny4yLTc1LjEgMC01Ny45LTYzLTgyLjUtNzUuMi0xMjEuOCIvPg0KICAgIDxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik05OS45IDE0OS40SDkxYy0xIDAtMS44LjgtMS44IDEuOHY4LjljMCAxIC44IDEuOCAxLjggMS44aDguOWMxIDAgMS44LS44IDEuOC0xLjh2LTguOWMtLjEtMS0uOS0xLjgtMS44LTEuOG0zNS4xIDMzLjRoLTguOWMtMSAwLTEuOC44LTEuOCAxLjh2OC45YzAgMSAuOCAxLjggMS44IDEuOGg4LjljMSAwIDEuOC0uOCAxLjgtMS44di04LjljMC0xLS44LTEuOC0xLjgtMS44bTI5LjgtMzMuN2gtMjguMnYtMzIuNGwtNi4xLTkuMi02LjEgOC44djQ1bDQwLjMuMSA3LjMtNi4yLTcuMi02LjF6Ii8+DQo8L3N2Zz4NCg=='
         },
         pictureAspect: 'silhouette',
-        themeColor: '#0078c8'
+        themeColor: '#2ba9e0'
       }
     },
     settings: {
       scalingAlgorithm: 'Mitchell',
       errorOnImageTooSmall: false,
-      readmeFile: false,
+      readmeFile: true,
       htmlCodeFile: false,
       usePathAsIs: false
     },
@@ -237,7 +217,7 @@ gulp.task('generate-favicon', function(done) {
 
 // Inject the favicon markups in your HTML pages.
 // The template is stored under:
-// patternlab/source/templates/favicontemplate.html.
+// templates/favicontemplate.html.
 // Copy the generated tags to the html.html.twig.
 gulp.task('inject-favicon-markups', function() {
   return gulp.src([ 'templates/favicontemplate.html' ])
