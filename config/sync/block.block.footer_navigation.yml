@@ -10,7 +10,7 @@ dependencies:
     - diad
 id: footer_navigation
 theme: diad
-region: footer
+region: footer_third
 weight: -4
 provider: null
 plugin: 'system_menu_block:main'

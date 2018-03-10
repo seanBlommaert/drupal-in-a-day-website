@@ -1,0 +1,23 @@
+//------------------------------------------------------------------------------
+// Shared.scss.
+// Keep the base libraries and styles together
+//------------------------------------------------------------------------------
+
+//------------------------------------------------------------------------------
+// Libraries.
+//------------------------------------------------------------------------------
+@import "../node_modules/sass-mq/mq";
+@import "../node_modules/sass-rem/rem";
+@import "base/variables";
+@import "base/colors";
+@import "base/mixins";
+
+//------------------------------------------------------------------------------
+// Partials.
+//------------------------------------------------------------------------------
+@import "base/fonts";
+@import "base/normalize";
+@import "base/extends";
+@import "partials/root";
+@import "partials/typography";
+@import "partials/icons";

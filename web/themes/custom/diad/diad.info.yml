@@ -3,25 +3,28 @@ type: theme
 description: Drupal-In-A-Day theme
 package: Other
 core: 8.x
+base theme: stable
 screenshot: diad.png
 
 libraries:
-  - diad/fonts-com
-  - diad/fontawesome
-  - diad/bootstrap4
   - diad/global-styling
 
-base theme: stable
-
 regions:
-  content: Content
-  footer: Footer
+  top: Top
   header: Header
-  primary_menu: Primary Menu
-  hero_image: Hero Image
-  secondary_menu: Secondary Menu
-  highlighted: Highlighted
-  help: Help
-  sidebar_first: Sidebar First
-  sidebar_second: Sidebar Second
-  breadcrumb: Breadcrumb 
+  navigation: Navigation
+  hero: Hero
+  breadcrumb: Breadcrumb
+  above_content: Above content
+  messages: Messages
+  content_top: Content top
+
+  content: Content
+  sidebar_first: Sidebar first
+  sidebar_second: Sidebar second
+
+  content_bottom: Content bottom
+  below_content: Below content
+  footer_first: Footer first
+  footer_second: Footer second
+  footer_third: Footer third

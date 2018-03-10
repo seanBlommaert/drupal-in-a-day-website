@@ -9,7 +9,7 @@ _core:
 id: diad_page_title
 theme: diad
 region: content
-weight: -3
+weight: -5
 provider: null
 plugin: page_title_block
 settings:

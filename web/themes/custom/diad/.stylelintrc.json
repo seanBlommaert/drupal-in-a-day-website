@@ -1,0 +1,165 @@
+{
+  "extends": "stylelint-config-standard",
+  "plugins": [
+    "stylelint-order",
+    "stylelint-scss",
+    "stylelint-no-unsupported-browser-features"
+  ],
+
+  "rules": {
+    "no-descending-specificity": [true, { "severity": "warning" }],
+    "at-rule-no-unknown": false,
+    "block-no-empty": null,
+    "color-hex-case": "lower",
+    "color-hex-length": "short",
+    "declaration-empty-line-before": null,
+    "at-rule-empty-line-before": null,
+    "selector-pseudo-element-colon-notation": null,
+    "number-leading-zero": "never",
+    "number-no-trailing-zeros": true,
+    "font-weight-notation": "numeric",
+    "string-quotes": "double",
+    "length-zero-no-unit": true,
+    "function-url-quotes": "never",
+    "unit-case": "lower",
+    "indentation": 2,
+    "property-case": "lower",
+    "value-keyword-case": "lower",
+    "no-eol-whitespace": true,
+    "value-list-comma-space-after": "always-single-line",
+    "value-list-comma-space-before": "never",
+    "declaration-colon-space-before": "never",
+    "declaration-colon-space-after": "always-single-line",
+    "value-list-max-empty-lines": 0,
+    "max-empty-lines": 1,
+    "max-line-length": 120,
+    "declaration-bang-space-before": "never",
+    "no-missing-end-of-source-newline": true,
+    "function-whitespace-after": "always",
+    "unit-blacklist": ["px", "in", "cm", "mm", "pt", "pc"],
+    "scss/at-rule-no-unknown": true,
+    "scss/at-extend-no-missing-placeholder": true,
+    "plugin/no-unsupported-browser-features": [true, { "severity": "warning" }],
+
+    "order/order": [
+      "declarations",
+      {
+        "type": "at-rule"
+      }
+    ],
+    "order/properties-order": [
+      {
+        "properties": [
+          "content",
+          "box-sizing",
+          "position",
+          "display",
+          "z-index",
+          "top",
+          "right",
+          "bottom",
+          "left",
+
+          "grid-row",
+          "grid-row-start",
+          "grid-row-end",
+          "grid-column",
+          "grid-column-start",
+          "grid-column-end",
+          "grid-area",
+
+          "grid",
+          "grid-template",
+          "grid-template-columns",
+          "grid-template-rows",
+          "grid-template-areas",
+          "grid-auto-columns",
+          "grid-auto-rows",
+          "grid-auto-flow",
+          "grid-gap",
+          "grid-row-gap",
+          "grid-column-gap",
+
+          "flex",
+          "flex-shrink",
+          "flex-grow",
+          "flex-basis",
+          "align-self",
+          "justify-self",
+          "order",
+
+          "flex-flow",
+          "flex-direction",
+          "flex-wrap",
+          "justify-content",
+          "align-content",
+          "justify-items",
+          "align-items",
+
+          "float",
+          "clear",
+          "width",
+          "min-width",
+          "max-width",
+          "height",
+          "min-height",
+          "max-height",
+          "margin",
+          "margin-top",
+          "margin-right",
+          "margin-bottom",
+          "margin-left",
+          "padding",
+          "padding-top",
+          "padding-right",
+          "padding-bottom",
+          "padding-left",
+          "overflow"
+        ],
+        "emptyLineBefore": "always"
+      },
+      {
+        "properties": [
+          "vertical-align",
+          "font-family",
+          "font-size",
+          "font-weight",
+          "font-style",
+          "font-stretch",
+          "font-variant",
+          "src",
+          "line-height",
+          "text-align",
+          "text-decoration",
+          "color",
+          "background",
+          "background-color",
+          "background-image",
+          "background-repeat",
+          "background-position",
+          "background-size",
+          "border",
+          "border-top",
+          "border-right",
+          "border-bottom",
+          "border-left",
+          "border-width",
+          "border-style",
+          "border-color",
+          "border-radius",
+          "cursor"
+        ],
+        "emptyLineBefore": "always"
+      },
+      {
+        "properties": [
+          "fill",
+          "transform",
+          "animation",
+          "transition"
+        ],
+        "emptyLineBefore": "always"
+      }
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+//------------------------------------------------------------------------------
+// Styles.scss.
+//------------------------------------------------------------------------------
+
+//------------------------------------------------------------------------------
+// Base.
+//------------------------------------------------------------------------------
+@import "shared";
+@import "base/animations";
+@import "system/skiplink";
+@import "system/toolbar-admin";
+@import "system/tabs-admin";
+@import "system/contextual";
+@import "partials/layout";
+@import "system/messages";
+@import "system/login";
+@import "system/user";
+@import "partials/media";
+@import "partials/blocks";
+@import "partials/menus";
+@import "partials/views";
+@import "partials/pagetitle";
+@import "partials/search";
+@import "partials/paragraphs";
+@import "partials/pager";
+@import "system/maintenance-page";
+
+//------------------------------------------------------------------------------
+// Patternlab.
+//------------------------------------------------------------------------------
+@import "patternlab/patternlab";
+
+//------------------------------------------------------------------------------
+// Shame.
+//------------------------------------------------------------------------------
+@import "shame";

@@ -1,22 +1,36 @@
 {
   "name": "diad-gulp",
-  "version": "1.0.0",
   "description": "Gulp dependencies Diad theme",
-  "main": "gulpfile.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Paul Rijke",
-  "license": "ISC",
+  "version": "1.0.5",
+  "author": "Bernard Skibinski",
+  "license": "GPL",
+  "private": true,
   "devDependencies": {
-    "browsersync": "0.0.1-security",
-    "gulp": "^3.9.0",
-    "gulp-autoprefixer": "^3.0.2",
-    "gulp-imagemin": "^2.3.0",
+    "autoprefixer": "^8.0.0",
+    "browser-sync": "^2.23.6",
+    "eslint": "^4.17.0",
+    "gulp": "^3.9.1",
+    "gulp-postcss": "^7.0.1",
     "gulp-livereload": "^3.8.0",
-    "gulp-sass": "^2.0.4",
-    "gulp-sourcemaps": "^1.5.2",
-    "gulp-uglifyjs": "^0.6.2",
-    "imagemin-pngquant": "^4.2.0"
-  }
+    "gulp-real-favicon": "^0.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-svgmin": "^1.2.4",
+    "gulp-svgstore": "^6.1.1",
+    "path": "^0.12.7",
+    "postcss-normalize": "^4.0.0",
+    "sass-mq": "^4.0.2",
+    "sass-rem": "^2.0.0",
+    "stylelint": "^9.0.0",
+    "stylelint-config-standard": "^18.1.0",
+    "stylelint-no-unsupported-browser-features": "^2.0.0",
+    "stylelint-order": "^0.8.0",
+    "stylelint-scss": "^2.3.0",
+    "svgo": "^1.0.4"
+  },
+  "browserslist": [
+    "defaults",
+    "ie >= 10",
+    "not OperaMini all"
+  ]
 }

@@ -1,0 +1,23 @@
+//------------------------------------------------------------------------------
+// Patternlab.scss.
+// Patternlab styling.
+//------------------------------------------------------------------------------
+.sg-pattern,
+.sg-subtype {
+  padding: 1em;
+
+  h2 {
+    margin: 0;
+
+    a {
+      color: $color-font-base;
+      text-transform: capitalize;
+    }
+  }
+}
+
+#sg-patterns {
+  .action__link {
+    background-color: transparent;
+  }
+}

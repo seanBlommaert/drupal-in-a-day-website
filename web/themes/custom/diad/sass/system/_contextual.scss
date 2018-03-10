@@ -1,0 +1,286 @@
+//------------------------------------------------------------------------------
+// Contextual.scss.
+// Styling for contextual module.
+//------------------------------------------------------------------------------
+
+// Contextual link.
+//------------------------------------------------------------------------------
+
+.contextual-links {
+  display: none;
+  @extend %reset-list;
+  margin-top: -$pixel-1;
+  overflow: hidden;
+
+  text-align: left; // LTR.
+  white-space: nowrap;
+  background-color: $color-contextual-bg;
+  border: $contextual-border-width solid $color-contextual-border;
+  border-radius: $contextual-list-border-radius 0 $contextual-list-border-radius $contextual-list-border-radius; // LTR.
+
+  animation: contextual-menu-right $contextual-animation-time reverse;
+
+  [dir="rtl"] & {
+    text-align: right;
+    border-radius: 0 $contextual-list-border-radius $contextual-list-border-radius $contextual-list-border-radius;
+
+    animation: contextual-menu-left $contextual-animation-time reverse;
+  }
+
+  li {
+    margin-bottom: $contextual-list-marginbottom;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  a {
+    display: block;
+    padding: $contextual-list-padding;
+
+    font-family: $contextual-list-fontfamily;
+    font-size: $contextual-list-fontsize;
+    line-height: 1.1;
+    text-decoration: none;
+    color: $color-contextual-text;
+    background-color: $color-white-1;
+
+    .touchevents & {
+      font-size: $contextual-list-fontsize-touch;
+    }
+
+    &:hover {
+      text-decoration: none;
+
+      .no-touchevents & {
+        color: $color-contextual-text-hover;
+        background-color: $color-contextual-bg-hover;
+      }
+    }
+  }
+}
+
+// contextual links wrappers.
+.contextual {
+  position: absolute;
+  display: flex;
+  z-index: 50;
+  top: -($contextual-height/2);
+  right: -($contextual-width/2);
+  flex-direction: column;
+  align-items: flex-end; // LTR.
+
+  @include mq ($until: bp-desktop) {
+    right: 0;
+  }
+
+  [dir="rtl"] & {
+    align-items: flex-start;
+  }
+
+  //Contextual trigger.
+  .trigger {
+    // Override the .focusable height: auto.
+    width: $contextual-width!important;
+    // Override the .focusable height: auto.
+    height: $contextual-height!important;
+    overflow: hidden;
+
+    font-size: 0;
+    background-color: $color-contextual-bg;
+    // @todo replace with true SVG.
+    background-image: url(../images/svg/icon-pencil-default.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+    background-attachment: scroll;
+    border: $contextual-border-width solid $color-contextual-border;
+    border-radius: $contextual-border-radius;
+    cursor: pointer;
+    opacity: 1;
+
+    transition:
+      border-radius 100ms ease,
+      opacity 200ms ease;
+
+    &:hover {
+      // @todo replace with true SVG.
+      background-image: url(../images/svg/icon-pencil-hover.svg);
+    }
+
+    &:focus {
+      // Override the .focusable position: static
+      position: relative!important;
+      // @todo replace with true SVG.
+      background-image: url(../images/svg/icon-pencil-focus.svg);
+      outline: none;
+    }
+
+    // Make them dissapear nicely.
+    &.visually-hidden {
+      opacity: 0;
+      clip: auto;
+    }
+  }
+
+  &.open {
+    z-index: 51;
+
+    .trigger {
+      z-index: 2;
+
+      border-width: $contextual-border-width;
+      border-color: $color-contextual-border $color-contextual-border transparent $color-contextual-border;
+      border-radius: $contextual-border-radius $contextual-border-radius 0 0;
+      box-shadow: none;
+    }
+
+    .contextual-links {
+      display: block;
+
+      animation: contextual-menu-right $contextual-animation-time;
+
+      [dir="rtl"] & {
+        animation: contextual-menu-left $contextual-animation-time;
+      }
+    }
+  }
+}
+
+// Contextual region.
+// The following selectors are heavy to discourage theme overriding.
+//------------------------------------------------------------------------------
+
+.contextual-region {
+  position: relative;
+
+  &.focus {
+    outline: $contextual-outline-width dashed $color-contextual-outline;
+    outline-offset: $contextual-outline-offset;
+  }
+
+  &.view {
+    &.focus {
+      outline-color: $color-contextual-view;
+    }
+
+    > .contextual {
+      top: -($contextual-height/2)!important; // Override inline element styling.
+      right: 0;
+      left: 0;
+      align-items: center;
+
+      .trigger {
+        border-color: $color-contextual-view;
+
+        &:focus {
+          background-image: url(../images/svg/icon-pencil-alt-1.svg);
+        }
+      }
+
+      .contextual-links {
+        border-color: $color-contextual-view;
+
+        a {
+          background-color: $color-white-1;
+
+          &:hover {
+            .no-touchevents & {
+              background-color: $color-contextual-view;
+            }
+          }
+        }
+      }
+
+      &.open {
+        .trigger {
+          border-color: $color-contextual-view $color-contextual-view transparent $color-contextual-view;
+        }
+
+        .contextual-links {
+          animation: contextual-menu-center $contextual-animation-time;
+        }
+      }
+    }
+  }
+}
+
+// Toolbar/tab appearance.
+//------------------------------------------------------------------------------
+
+// Drupal admin theme fix, full width for button element on very narrow screen.
+.toolbar-icon-edit {
+  width: 100%;
+
+  text-align: left;
+
+  [dir="rtl"] & {
+    text-align: right;
+  }
+}
+
+.toolbar-bar {
+  .toolbar-icon-edit {
+    &:before {
+      // @todo replace with true SVG.
+      background-image: url(../images/svg/icon-pencil-default.svg);
+    }
+
+    &:active:before,
+    &.is-active:before {
+      // @todo replace with true SVG.
+      background-image: url(../images/svg/icon-pencil-active.svg);
+    }
+  }
+}
+
+// @todo what is this after element for? breaks clicking in adminbar.
+.toolbar-oriented {
+  .toolbar-tray-vertical {
+    > .toolbar-lining {
+      &:before {
+        content: none;
+      }
+    }
+  }
+}
+
+// Drupal admin theme fix, proper z-index for active menu on very narrow screen.
+.toolbar {
+  .toolbar-tray-vertical {
+    &.is-active {
+      z-index: 510;
+    }
+  }
+
+  //.toolbar-bar {
+  //  .contextual-toolbar-tab {
+  //    &.toolbar-tab {
+  //      // @todo discuss if we want this. really hacky way.
+  //      // float: right; // LTR.
+  //
+  //      [dir="rtl"] & {
+  //        // @todo discuss if we want this. really hacky way.
+  //        // float: left;
+  //      }
+  //    }
+  //
+  //    .toolbar-item {
+  //      // @todo Bernard: not sure why this is needed at all.
+  //      // margin: 0;
+  //
+  //      &.is-active {
+  //        // Overridden by adminimal theme. If you use the basic toolbar, enable this.
+  //        // background-image: linear-gradient($color-toolbar-active-grad1 0%, $color-toolbar-active-grad2 100%);
+  //      }
+  //    }
+  //
+  //    // @todo get rid of this declaration by making toolbar.module's CSS less specific
+  //    // @todo Bernard: not sure why this is needed at all.
+  //    //&.toolbar-tab.hidden {
+  //    //  display: none;
+  //    //}
+  //  }
+  //}
+}

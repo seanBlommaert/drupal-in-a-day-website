@@ -2,17 +2,14 @@ uuid: aa183bb4-2294-44a3-804a-030074d77c9e
 langcode: en
 status: true
 dependencies:
-  content:
-    - 'block_content:standard_block:05358443-33c4-4078-aa50-43b7930a32f3'
   module:
-    - block_content
     - system
   theme:
     - diad
 id: frontpageheroimage
 theme: diad
-region: hero_image
-weight: 0
+region: hero
+weight: -5
 provider: null
 plugin: 'block_content:05358443-33c4-4078-aa50-43b7930a32f3'
 settings:

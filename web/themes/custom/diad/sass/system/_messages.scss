@@ -1,0 +1,79 @@
+//------------------------------------------------------------------------------
+// Messages.scss.
+// Status/warning/error message styling.
+//------------------------------------------------------------------------------
+.l-messages-inner {
+  position: relative;
+  padding-top: $margin-default-4;
+  padding-bottom: $margin-default-4;
+  padding-left: 3rem;
+
+  &:before {
+    content: " ";
+    position: absolute;
+    top: 1.2rem;
+    left: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    .messages--status & {
+      background-image: url(../images/svg/icon-succes-white.svg);
+    }
+
+    .messages--warning & {
+      background-image: url(../images/svg/icon-warning-black.svg);
+    }
+
+    .messages--error & {
+      background-image: url(../images/svg/icon-error-white.svg);
+    }
+  }
+
+  @include mq(bp-desktop) {
+    padding-left: 4rem;
+
+    &:before {
+      left: 2rem;
+    }
+  }
+}
+
+.messages {
+  color: $color-white-1;
+  background-color: $color-message-neutral;
+
+  a {
+    color: currentColor;
+
+    &:hover,
+    &:focus {
+      outline: $border-width-1 solid currentColor;
+    }
+  }
+}
+
+.messages--status {
+  background-color: $color-message-status;
+}
+
+.messages--warning {
+  color: $color-black-1;
+  background-color: $color-message-warning;
+
+  a {
+    color: currentColor;
+
+    &:focus,
+    &:hover {
+      outline-color: currentColor;
+    }
+  }
+}
+
+.messages--error {
+  background-color: $color-message-error;
+}

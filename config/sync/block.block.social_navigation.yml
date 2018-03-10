@@ -10,8 +10,8 @@ dependencies:
     - diad
 id: social_navigation
 theme: diad
-region: footer
-weight: -3
+region: footer_second
+weight: -4
 provider: null
 plugin: 'system_menu_block:social'
 settings:

@@ -17,4 +17,5 @@ content:
     weight: 100
     region: content
 hidden:
+  field_content: true
   field_hero: true

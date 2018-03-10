@@ -1,0 +1,32 @@
+//------------------------------------------------------------------------------
+// Root.scss.
+//------------------------------------------------------------------------------
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  color: $color-white-1;
+  background: $color-blue-3;
+}
+
+:focus {
+  outline-color: $color-blue-3;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+
+  font-family: $font-family-primary;
+  font-size: $base-font-size;
+  line-height: $font-line-height-1;
+  color: $color-font-base;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}

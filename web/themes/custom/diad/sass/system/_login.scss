@@ -1,0 +1,54 @@
+//------------------------------------------------------------------------------
+// Login.scss.
+// Login form at /user.
+//------------------------------------------------------------------------------
+.user-register-form,
+.user-pass,
+.user-login-form {
+  max-width: $node-content-width;
+  margin-top: $margin-default-1;
+  margin-bottom: $margin-default-2;
+  padding: $content-padding;
+
+  background-color: $color-gray-3;
+
+  details {
+    margin-top: $margin-default-4;
+    margin-bottom: $margin-default-4;
+    padding: $site-padding-1;
+
+    border: $border-width-1 solid $color-black-1;
+
+    > summary {
+      cursor: pointer;
+    }
+
+    &[open] {
+      > summary {
+        margin-bottom: $margin-default-4;
+      }
+    }
+  }
+
+  .form-item {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: $margin-default-3;
+
+    > label {
+      margin-bottom: $margin-default-1;
+
+      font-size: $font-size-large;
+      font-weight: 500;
+      color: $color-headings;
+    }
+
+    > .description {
+      width: 100%;
+      margin-top: $margin-default-1;
+
+      font-style: italic;
+    }
+  }
+}

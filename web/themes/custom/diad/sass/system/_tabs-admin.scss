@@ -1,0 +1,111 @@
+//------------------------------------------------------------------------------
+// Tabs-admin.scss.
+// Admin tabs styling.
+//------------------------------------------------------------------------------
+.tab__list {
+  @extend %reset-list;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tab__item {
+  &.tab__item--active {
+    display: none;
+  }
+
+  a {
+    position: relative;
+    display: block;
+    z-index: 0;
+
+    text-decoration: none;
+    color: $color-admintabs-text;
+
+    transition: color 300ms ease;
+
+    &[data-drupal-link-system-path*="delete"] {
+      color: $color-red-1;
+
+      &:before {
+        background-color: $color-red-1;
+      }
+    }
+
+    &:before {
+      content: " ";
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      background-color: $color-admintabs-border;
+
+      transform: scaleY(0);
+      transform-origin: bottom;
+      transition: transform 200ms ease;
+    }
+
+    &.is-active {
+      color: $color-admintabs-text-active;
+
+      &:before {
+        background-color: $color-admintabs-border-active;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      color: $color-white-1;
+      border-color: $color-admintabs-text;
+
+      &:before {
+        transform: scaleY(1);
+        transform-origin: bottom;
+      }
+    }
+  }
+}
+
+@include mq($until: bp-tablet) {
+  .tab__list {
+    margin-right: -$site-padding-1;
+    margin-left: -$site-padding-1;
+  }
+
+  .tab__item {
+    flex-grow: 1;
+
+    a {
+      padding: $pixel-10 $site-padding-1;
+
+      border-bottom-width: $border-width-2;
+      border-bottom-style: solid;
+    }
+  }
+}
+
+@include mq(bp-tablet) {
+  .tab__list {
+    margin: $margin-default-1 (-$margin-default-1);
+  }
+
+  .tab__item {
+    display: flex;
+    margin: $margin-default-1;
+
+    a {
+      padding: .5rem;
+
+      border-width: $border-width-1;
+      border-style: solid;
+      border-color: $color-admintabs-text;
+
+      &:hover,
+      &:focus {
+        border-color: $color-admintabs-text;
+      }
+    }
+  }
+}

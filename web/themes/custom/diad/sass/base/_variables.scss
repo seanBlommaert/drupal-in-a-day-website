@@ -1,0 +1,288 @@
+//------------------------------------------------------------------------------
+// Variables.scss.
+//------------------------------------------------------------------------------
+// Stylelint rules:
+// stylelint-disable unit-blacklist
+//------------------------------------------------------------------------------
+// Custom variables.
+//------------------------------------------------------------------------------
+
+// Scrollbars (checked by Bernard Skibinski 2018-01-25)
+$scrollbar-default-width-px:      17px; // Used in MQ calculation below.
+$scrollbar-chrome-default-width:  rem(17px);
+$scrollbar-ff-default-width:      rem(17px);
+$scrollbar-safari-default-width:  rem(17px);
+$scrollbar-edge-default-width:    rem(16px);
+$scrollbar-ie-default-width:      rem(17px);
+// Generic.
+$margin-default-1:                rem(5px);
+$margin-default-2:                rem(10px);
+$margin-default-3:                rem(15px);
+$margin-default-4:                rem(20px);
+$margin-default-5:                rem(25px);
+$margin-default-6:                rem(30px);
+$margin-default-7:                rem(35px);
+$margin-default-8:                rem(40px);
+
+$pixel-1:                         rem(1px);
+$pixel-2:                         rem(2px);
+$pixel-3:                         rem(3px);
+$pixel-4:                         rem(4px);
+$pixel-5:                         rem(5px);
+$pixel-6:                         rem(6px);
+$pixel-7:                         rem(7px);
+$pixel-8:                         rem(8px);
+$pixel-9:                         rem(9px);
+$pixel-10:                        rem(10px);
+
+// Fonts.
+$base-font-family:                "Gill Sans", arial, helvetica, sans-serif;
+
+// HTML font size.
+$base-font-size:                  112.5%;
+// Needed for calculations. Convert "$base-font-size" to a pixel value.
+$base-font-size-pixel-value:      16px;
+
+$rem-baseline:                    $base-font-size-pixel-value;
+
+$font-family-primary:             $base-font-family;
+
+$font-size-default:               rem(18px);
+
+$font-size-smallest:              rem(15px);
+$font-size-small:                 rem(16px);
+$font-size-large:                 rem(20px);
+
+$base-line-height:                1.33333;
+$font-line-height-1:              $base-line-height;
+$font-line-height-2:              1.44444;
+$font-line-height-3:              1.5;
+
+// < Mobile.
+$font-size-1-h1:                  rem(22px);
+$font-size-1-h1-alt:              rem(40px);
+$font-size-1-h2:                  rem(24px);
+$font-size-1-h2-alt1:             rem(24px);
+$font-size-1-h2-alt2:             rem(22px);
+$font-size-1-h3:                  rem(22px);
+$font-size-1-h4:                  rem(20px);
+$font-size-1-h5:                  rem(18px);
+$font-size-1-h6:                  rem(16px);
+
+// Tablet >.
+$font-size-2-h1:                  rem(42px);
+$font-size-2-h1-alt:              rem(62px);
+$font-size-2-h2:                  rem(30px);
+$font-size-2-h2-alt1:             rem(24px);
+$font-size-2-h2-alt2:             rem(26px);
+$font-size-2-h3:                  rem(22px);
+$font-size-2-h4:                  rem(20px);
+$font-size-2-h5:                  rem(18px);
+$font-size-2-h6:                  rem(16px);
+
+// Site defaults.
+$site-padding-px-1:               16px;
+$site-padding-1:                  rem($site-padding-px-1);
+$site-padding-2:                  rem($site-padding-px-1);
+$site-padding-3:                  rem($site-padding-px-1);
+$site-padding-4:                  rem($site-padding-px-1);
+$site-padding-5:                  rem(30px);
+$site-padding-6:                  rem(30px);
+
+$site-width-1:                    calc(#{rem(220px)} + ( #{$site-padding-1} * 2));
+$site-width-2:                    calc(#{rem(320px)} + ( #{$site-padding-2} * 2));
+$site-width-3:                    calc(#{rem(500px)} + ( #{$site-padding-3} * 2));
+$site-width-4:                    calc(#{rem(669px)} + ( #{$site-padding-4} * 2));
+$site-width-5:                    calc(#{rem(1070px)} + ( #{$site-padding-5} * 2));
+$site-width-6:                    calc(#{rem(1300px)} + ( #{$site-padding-6} * 2));
+
+// Contextual links.
+$contextual-list-fontsize:        rem(16px);
+$contextual-list-fontsize-touch:  rem(20px);
+$contextual-list-fontfamily:      sans-serif;
+$contextual-list-padding:         .5em .6em;
+
+$contextual-animation-time:       400ms;
+
+$contextual-width:                rem(30px);
+$contextual-height:               rem(30px);
+$contextual-border-width:         rem(1px);
+$contextual-border-radius:        rem(20px);
+$contextual-list-border-radius:   0;
+$contextual-list-marginbottom:    rem(1px);
+
+$contextual-outline-width:        rem(2px);
+$contextual-outline-offset:       rem(1px);
+
+// Admin menu.
+$menu-admin-height:               rem(39px);
+$menu-admin-height-expanded:      rem(79px);
+$menu-admin-width-expanded:       rem(240px);
+
+// Menu button.
+$btn-menu-padding-vert:           rem(19px);
+$btn-menu-padding-horz:           rem(14.5px);
+$btn-menu-width:                  rem(125px);
+$btn-menu-fontsize:               rem(15px);
+
+$menu-item-padding:               rem(17.5px);
+$menu-item-fontsize-1:            rem(17px);
+$menu-item-fontsize-2:            rem(19px);
+$menu-item-mydelft-fontsize-1:    rem(21px);
+
+$menu-mobile-transition-time:     400ms;
+
+// Pager
+$pager-wrapper-padding:           rem(12.5px);
+$pager-link-width:                rem(35px);
+$pager-link-padding-hor:          rem(6px);
+$pager-link-padding-ver:          rem(13px);
+
+// Buttons.
+$btn-default-padding-horz:        rem(12px);
+$btn-default-padding-vert:        rem(20px);
+$btn-default-padding-horz-icon:   rem(7px);
+
+$btn-search-padding-horz:         rem(16.5px);
+
+// Btnlink direct link
+$btn-directlink-padding-horz:     rem(14px);
+
+// Btnlink
+$btnlink-default-padding-horz-1:  rem(11px);
+$btnlink-default-padding-horz-2:  rem(5px);
+
+// Button profile.
+$btn-profile-padding-horz:        rem(4px);
+$btn-profile-icon:                rem(40px);
+$btn-profile-icon-padding:        rem(5px);
+
+// Node.
+$node-content-width:              rem(710px);
+$node-sidebar-width-1:            rem(200px);
+$node-sidebar-width-2:            rem(256px);
+$news-sidebar-width:              rem(350px);
+
+$news-region-width-px:            860px;
+$news-region-width:               rem($news-region-width-px);
+
+$node-sidebar-marginleft-1:       rem(40px);
+$node-sidebar-marginleft-2:       rem(40px);
+
+// Hero.
+$hero-height-1:                   rem(60px);
+$hero-height-2:                   rem(150px);
+$hero-height-bg-1:                rem(160px);
+$hero-height-bg-2:                rem(375px);
+
+$hero-padding-1:                  rem(10px);
+$hero-padding-2:                  rem(25px);
+
+$hero-padding-search-1:           rem(25px);
+
+$hero-padding-image-2:            rem(10px);
+
+// UL.
+$ul-padding-left:                 rem(19px);
+$li-padding-left:                 rem(19px);
+
+// Content.
+$content-padding:                 rem(42px);
+
+// List items.
+$linkblock-padding-1:             rem(10px);
+$linkblock-padding-2:             rem(6px);
+
+// Inputs.
+$input-default-padding-horz:      rem(5.5px);
+$input-default-padding-vert:      rem(10px);
+
+$input-search-padding-horz:       rem(15.5px);
+$input-search-padding-vert:       rem(35px);
+
+// Page title.
+$pagetitle-fontsize-1:            rem(40px);
+$pagetitle-fontsize-2:            rem(62px);
+
+$pagetitle-padding-1:             rem(3.5px);
+$pagetitle-padding-2:             rem(44px);
+
+// Breadcrumb.
+$breadcrumb-padding:              rem(8px);
+
+// Borders.
+$border-width-1:                  rem(1px);
+$border-width-2:                  rem(2px);
+$border-width-3:                  rem(3px);
+$border-width-4:                  rem(4px);
+$border-width-5:                  rem(5px);
+$border-width-6:                  rem(10px);
+
+// Header.
+$header-height-1:                 rem(60px);
+$header-height-2:                 rem(70px);
+$header-padding-top-1:            rem(80px);
+$header-padding-top-2:            rem(10px);
+
+$header-minheight:                rem(220px);
+$header-home-height:              rem(450px);
+$header-topbar-height:            rem(70px);
+
+// Contact.
+$contact-item-before:             rem(40px);
+
+$contactblock-icon-size:          rem(20px);
+
+// Logo.
+$logo-width-1:                    rem(95.23px);
+$logo-height-1:                   rem(28px);
+$logo-width-2:                    rem(132.66px);
+$logo-height-2:                   rem(39px);
+
+// Pagenav.
+$pagenav-margin-bottom:           rem(2px);
+
+// Tile.
+$tile-maxwidth:                   calc(#{rem(350px)} + (#{$margin-default-1} * 2));
+
+$tile-heading-height-1:           rem(50px);
+$tile-heading-height-2:           rem(62px);
+
+$image-tile-maxheight:            rem(150px);
+$image-news-maxheight:            rem(180px);
+
+$tile-space-2:                    550px; // Optically "calculated".
+$tile-space-3:                    950px; // Optically "calculated".
+$tile-space-offset:               40px;
+
+//------------------------------------------------------------------------------
+// Sass-mq variables.
+//------------------------------------------------------------------------------
+$mq-base-font-size:               $base-font-size-pixel-value!default;
+
+$mq-responsive:                   true;
+
+$mq-breakpoints: (
+  // Main breakpoints.
+  bp-watch:                       (280px + $scrollbar-default-width-px),
+  bp-mobile:                      (320px + $scrollbar-default-width-px),
+  bp-phablet:                     (420px + $scrollbar-default-width-px),
+  bp-tablet:                      (601px + $scrollbar-default-width-px),
+  bp-desktop:                     (1130px + $scrollbar-default-width-px),
+  bp-tv:                          (1920px + $scrollbar-default-width-px),
+  // Specific breakpoints.
+  bp-kcc:                         (1500px + $scrollbar-default-width-px),
+  bp-adminmenu:                   264px,
+  bp-tile-2:                      $tile-space-2,
+  bp-tile-3:                      $tile-space-3,
+  bp-sidebar:                     875px, // Optically "calculated".
+  bp-pager:                       ($news-region-width-px + $scrollbar-default-width-px + ($site-padding-px-1 * 2)),
+);
+
+//$mq-static-breakpoint:            bp-desktop;
+
+// values: mobile, tablet, desktop, etc.
+//$mq-show-breakpoints:             (bp-mobile, bp-tablet, bp-desktop);
+
+// values: all, screen, media, print.
+$mq-media-type:                   all;

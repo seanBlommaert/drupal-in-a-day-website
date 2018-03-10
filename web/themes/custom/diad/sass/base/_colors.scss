@@ -1,0 +1,254 @@
+//------------------------------------------------------------------------------
+// Colors.scss.
+//------------------------------------------------------------------------------
+
+//------------------------------------------------------------------------------
+// Base colors.
+//------------------------------------------------------------------------------
+// Blacks.
+$color-black-1:                   #000;
+$color-black-2:                   #0b0b0b;
+
+// Whites.
+$color-white-1:                   #fff;
+
+// Grays.
+
+// Delft lightgray. (regions, icons footer).
+$color-gray-1:                    #ebedee;
+$color-gray-2:                    #d8d8d8;
+$color-gray-3:                    #818181;
+// Tile border color.
+$color-gray-3:                    #dadada;
+// Footer text/icon (not headings).
+$color-gray-4:                    #e6e8e9;
+$color-gray-5:                    #454545;
+
+$gray-base:        #000 !default;
+
+// nader te bepalen
+$gray-darker:	   lighten($gray-base, 13.5%) !default; // #222
+$gray-dark:		   lighten($gray-base, 20%) !default;   // #333
+$gray:			   lighten($gray-base, 33.5%) !default; // #555
+$gray-light:	   lighten($gray-base, 46.7%) !default; // #777
+$gray-lighter:	   lighten($gray-base, 93.5%) !default; // #eee
+
+// Font declarations
+$font-default: 'Avenir LT W01_55 Roman1475520', sans-serif;
+$font-light: 'Avenir LT W01_35 Light_1475502', sans-serif;
+$font-book: 'Avenir LT W01_45 Book1475508', sans-serif;
+$font-medium: 'Avenir LT W01_65 Medium1475532', sans-serif;
+$font-heavy: 'Avenir LT W01_85 Heavy1475544', sans-serif;
+
+//------------------------------------------------------------------------------
+// Theme colors.
+//------------------------------------------------------------------------------
+
+// Delft darkblue. button hover, regions, headings.
+$color-blue-1:                    #2BA9E0;
+// Delft link hover.
+$color-blue-2:                    #2BA9E0;
+// Delft color. normal links Button normal, borders input/hr.
+$color-blue-3:                    #2BA9E0;
+// border light.
+$color-blue-4:                    #2BA9E0;
+// Delft lightblue 1. regions bg.
+$color-blue-5:                    #2BA9E0;
+// Visted link.
+$color-blue-6:                    #2BA9E0;
+
+// Unused.
+$color-red-1:                     #e74c3c;
+// transparant background hero.
+$color-red-2:                     #e74c3c;
+
+// Accent button bg.
+$color-orange-1:                  #FF9901;
+// Accent button text on blue.
+$color-orange-2:                  #FF9901;
+
+// Marker color.
+$color-yellow-1:                  #fed136;
+// Post-it color.
+$color-yellow-2:                  #fed136;
+// Delft yellow.
+$color-yellow-2:                  #fed136;
+
+// Green, Succes checkmarks, etc.
+$color-green-1:                   #62a714;
+// transparant background hero.
+$color-green-2:                   rgba(44, 164, 100, .75);
+
+// Brand colors (2018-01-27)
+$color-facebook:                  #3b5998;
+$color-twitter:                   #1da1f2;
+$color-google:                    #4285f4;
+$color-googleplus:                #dd4b39;
+$color-pinterest:                 #bd081c;
+$color-youtube:                   #f00;
+$color-vimeo:                     #1ab7ea;
+$color-whatsapp1:                 #075e54;
+$color-whatsapp2:                 #128c7e;
+$color-whatsapp3:                 #25d366;
+
+//------------------------------------------------------------------------------
+// Contextual links.
+//------------------------------------------------------------------------------
+$color-contextual-bg:             $color-white-1;
+$color-contextual-border:         $color-blue-3;
+$color-contextual-outline:        $color-blue-3;
+$color-contextual-view:           $color-orange-1;
+
+$color-contextual-text:           $color-black-1;
+$color-contextual-text-hover:     $color-white-1;
+$color-contextual-bg-hover:       $color-blue-3;
+
+// Not needed with adminimal toolbar.
+//$color-toolbar-active-grad1: rgb(78, 159, 234);
+//$color-toolbar-active-grad2: rgb(69, 132, 221);
+
+//------------------------------------------------------------------------------
+// Component colors.
+//------------------------------------------------------------------------------
+// General colors.
+$color-highlight-1:               $color-orange-1;
+$color-base-1:                    $color-orange-1;
+$color-primary-1:                 $color-orange-1;
+$color-secondary-1:               $color-blue-1;
+
+// Menu
+$color-menu-link-1:               $color-white-1;
+$color-menu-link-border-1:        $color-white-1;
+$color-menu-link-hover-1:         $color-black-1;
+
+$color-menu-link-2:               $color-black-1;
+$color-menu-link-hover-2:         $color-blue-3;
+
+$color-mydelft-bg:                $color-blue-3;
+$color-mydelft-text:              $color-white-1;
+
+// Logo
+$color-logo:                      $color-blue-3;
+
+// HR
+$color-hr:                        $color-blue-3;
+
+// Page title.
+$color-pagetitle-1:               $color-green-2;
+$color-pagetitle-2:               $color-red-2;
+
+// Buttons.
+// Default.
+$btn-default-bg:                  $color-blue-3;
+$btn-default-bg-hover:            $color-blue-1;
+$btn-default-bg-active:           $color-black-1;
+$btn-default-text:                $color-white-1;
+$btn-default-text-hover:          $color-white-1;
+
+// Orange.
+$btn-orange-icon:                 $color-white-1;
+$btn-orange-bg:                   $color-orange-1;
+$btn-orange-bg-hover:             $color-gray-1;
+$btn-orange-bg-active:            $color-gray-3;
+$btn-orange-text:                 $color-black-1;
+$btn-orange-text-hover:           $color-black-1;
+
+// sidebar gray.
+$btn-gray-bg:                   $color-gray-1;
+$btn-gray-bg-hover:             $color-blue-3;
+$btn-gray-bg-active:            $color-blue-3;
+$btn-gray-text:                 $color-blue-3;
+$btn-gray-text-hover:           $color-white-1;
+
+// sidebar gray.
+//$btn-profile-bg:                   $color-gray-1;
+//$btn-profile-bg-hover:             $color-blue-3;
+//$btn-profile-bg-active:            $color-blue-3;
+$btn-profile-text:                 $color-blue-3;
+$btn-profile-text-hover:           $color-black-1;
+
+// Admin tabs.
+$color-admintabs-text:            $color-gray-5;
+$color-admintabs-border:          $color-gray-5;
+$color-admintabs-text-active:     $color-blue-3;
+$color-admintabs-border-active:   $color-blue-3;
+
+// Inputs.
+$input-color-bg:                  $color-white-1;
+$input-color-bg-hover:            $color-gray-1;
+$input-color-bg-disabled:         $color-gray-3;
+$input-color-text:                $color-black-1;
+
+$input-color-border:              $color-blue-3;
+$input-color-border-hover:        $color-black-1;
+$input-color-border-focus:        $color-orange-1;
+$input-color-border-error:        $color-red-1;
+
+$input-color-search-border:       $color-white-1;
+
+// Borders
+$color-border-1:                  $color-gray-3;
+$color-border-2:                  $color-blue-4;
+$color-border-3:                  $color-blue-3;
+$color-border-4:                  $color-blue-1;
+
+// Messages
+$color-message-neutral:           $color-blue-3;
+$color-message-status:            $color-green-1;
+$color-message-warning:           $color-yellow-2;
+$color-message-error:             $color-red-1;
+
+// Font colors.
+$color-font-base:                 $color-black-1;
+$color-font-highlight:            $color-orange-1;
+
+// Headings.
+$color-headings:                  $color-blue-1;
+$color-h1:                        $color-headings;
+$color-h2:                        $color-headings;
+$color-h3:                        $color-headings;
+$color-h4:                        $color-headings;
+$color-h5:                        $color-headings;
+$color-h6:                        $color-headings;
+
+// Link colors.
+$color-link-default:              $color-blue-3;
+$color-link-hover:                $color-blue-2;
+$color-link-active:               $color-black-1;
+$color-link-visited:              $color-blue-6;
+
+// Page nav component.
+$color-page-nav-link:             $color-green-2;
+
+// Header.
+$color-header-bg-1:               $color-white-1;
+$color-header-bg-2:               $color-gray-1;
+$color-header-home:               $color-red-1;
+$color-header-heading-bg:         $color-green-2;
+
+// Search.
+$color-border-search:             $color-blue-4;
+
+// Tile.
+$color-tile-bg:                   $color-blue-4;
+
+// KCC.
+$color-kcc-tile-bg:               $color-yellow-2;
+$color-kcc-bg:                    $color-gray-5;
+
+// Region colors.
+$color-l-top:                     $color-white-1;
+$color-l-header:                  $color-gray-1;
+$color-l-hero:                    $color-blue-5;
+$color-l-breadcrumb:              $color-blue-1;
+$color-l-above-content:           $color-gray-1;
+$color-l-messages:                $color-white-1;
+$color-l-content-top:             $color-gray-1;
+$color-l-content:                 $color-white-1;
+$color-l-content-bottom:          $color-gray-1;
+$color-l-below-content:           $color-gray-1;
+$color-l-footer-first:            $color-blue-1;
+$color-l-footer-second:           $color-white-1;
+
+// custom colors.
+$color-mark:                      $color-yellow-1;

@@ -1,0 +1,61 @@
+//------------------------------------------------------------------------------
+// Icons.scss.
+//------------------------------------------------------------------------------
+%icon,
+.icon {
+  flex-shrink: 0;
+}
+
+%icon__menu,
+.icon__menu {
+  width: (25 / 15) + em;
+  height: (31 / 15) + em;
+}
+
+%icon__close,
+.icon__close {
+  width: (31 / 15) + em;
+  height: (31 / 15) + em;
+}
+
+%icon__arrow--thin,
+.icon__arrow--thin {
+  width: (25 / 18) + em;
+  height: (10 / 18) + em;
+}
+
+%icon__arrow--thick,
+.icon__arrow--thick {
+  width: (25 / 20) + em;
+  height: (11 / 20) + em;
+}
+
+%icon__chevron,
+.icon__chevron {
+  width: (5 / 18) + em;
+  height: (10 / 18) + em;
+}
+
+%icon__doublechevron,
+.icon__doublechevron {
+  width: (10 / 18) + em;
+  height: (10 / 18) + em;
+}
+
+%icon__calendar--checked,
+.icon__calendar--checked {
+  width: (36 / 21) + em;
+  height: (36 / 21) + em;
+}
+
+%icon__phone,
+.icon__phone {
+  width: (8 / 10) + em;
+  height: (12 / 10) + em;
+}
+
+%icon__announcement,
+.icon__announcement {
+  width: (30 / 18) + em;
+  height: (30 / 18) + em;
+}

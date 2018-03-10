@@ -1,0 +1,45 @@
+//------------------------------------------------------------------------------
+// Extends.scss.
+//------------------------------------------------------------------------------
+
+%visually-hidden,
+.visually-hidden {
+  position: absolute;
+  width: $pixel-1;
+  height: $pixel-1;
+  margin: 0;
+  padding: 0;
+  clip: rect($pixel-1, $pixel-1, $pixel-1, $pixel-1);
+  overflow: hidden;
+}
+
+%visually-hidden-focusable,
+.visually-hidden.focusable {
+  @extend %visually-hidden;
+
+  &:active,
+  &:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    clip: auto;
+    overflow: visible;
+  }
+}
+
+%first-last-child {
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+%reset-list {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style-type: none;
+}

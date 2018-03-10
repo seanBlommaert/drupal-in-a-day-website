@@ -1,0 +1,150 @@
+//------------------------------------------------------------------------------
+// Search.scss.
+// Search styling.
+//------------------------------------------------------------------------------
+
+.path-search {
+  .r-content {
+    max-width: $news-region-width;
+    padding-top: $content-padding;
+  }
+}
+
+.block__search {
+  > form {
+    display: flex;
+  }
+
+  label {
+    @extend %visually-hidden;
+  }
+
+  .js-form-type-textfield {
+    flex-grow: 1;
+  }
+
+  .btn {
+    display: flex;
+
+    padding-top: $btn-search-padding-horz;
+    padding-right: 3rem;
+    padding-bottom: $btn-search-padding-horz;
+
+    background-image: url(../images/svg/icon-search-white.svg);
+    background-repeat: no-repeat;
+    background-position: center right 1.25rem;
+    background-size: .9em;
+  }
+
+  .form-text {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.view__search {
+  .views-exposed-form {
+    display: flex;
+
+    label {
+      @extend %visually-hidden;
+    }
+  }
+
+  .js-form-type-textfield {
+    flex-grow: 1;
+
+    input {
+      width: 100%;
+
+      padding-top: $btn-search-padding-horz;
+      padding-bottom: $btn-search-padding-horz;
+    }
+  }
+
+  .form-submit {
+    height: 100%;
+  }
+
+  .view-header {
+    margin-top: $margin-default-4;
+    margin-bottom: $margin-default-4;
+
+    font-style: italic;
+  }
+
+  .view-empty {
+    padding-top: $margin-default-2;
+    padding-bottom: $content-padding;
+  }
+}
+
+.node[class*="search-result"] {
+  padding-top: $margin-default-8;
+  padding-bottom: $margin-default-8;
+
+  border-bottom: $border-width-1 solid $color-border-4;
+
+  &:first-child {
+    border-top: $border-width-1 solid $color-border-4;
+  }
+
+  > h2 {
+    max-width: $node-content-width;
+  }
+
+  > .node__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: $node-content-width;
+  }
+}
+
+.l-hero-inner {
+  .block__search {
+    display: flex;
+    justify-content: center;
+
+    > form {
+      display: flex;
+      justify-content: center;
+      width: calc(100% - (#{$site-padding-1} * 2));
+
+      box-shadow: 0 $pixel-1 $pixel-2 rgba($color-black-1, .25);
+    }
+
+    .btn {
+      display: flex;
+
+      padding-top: $btn-search-padding-horz;
+      padding-right: 3rem;
+      padding-bottom: $btn-search-padding-horz;
+
+      background-image: url(../images/svg/icon-search-white.svg);
+      background-repeat: no-repeat;
+      background-position: center right 1.25rem;
+      background-size: .9em;
+    }
+
+    .form-text {
+      width: 100%;
+      padding: $input-search-padding-horz $input-search-padding-vert;
+
+      border-color: $input-color-search-border;
+
+      &:hover {
+        border-color: $input-color-search-border;
+      }
+    }
+  }
+
+  @include mq(bp-tablet) {
+    .block__search {
+      > form {
+        width: 100%;
+        max-width: $node-content-width;
+      }
+    }
+  }
+}

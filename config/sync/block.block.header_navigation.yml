@@ -10,8 +10,8 @@ dependencies:
     - diad
 id: header_navigation
 theme: diad
-region: primary_menu
-weight: -6
+region: navigation
+weight: -5
 provider: null
 plugin: 'system_menu_block:main'
 settings:

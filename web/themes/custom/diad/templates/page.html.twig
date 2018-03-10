@@ -1,80 +1,138 @@
-<!-- Navigation -->
-<div class="navbar navbar-expand-lg fixed-top navbar-dark" id="mainNav">
-  <div class="container">
-    {{ page.header }}
-    {{ page.primary_menu }}
-  </div>
-</div>
-
-{{ page.hero_image }}
-{{ page.secondary_menu }}
-
-{{ page.breadcrumb }}
-
-{{ page.highlighted }}
-
-{{ page.help }}
-
-{# quick container added for aligning the regions #}
-<main role="main" class="container">
-  <a id="main-content" tabindex="-1"></a>
-  {# link is in html.html.twig #}
-
-  <div class="layout-content">
-    {{ page.content }}
-  </div>
-  {# /.layout-content #}
-
-  {% if page.sidebar_first %}
-    <aside class="layout-sidebar-first" role="complementary">
-      {{ page.sidebar_first }}
-    </aside>
+{# Page start #}
+<div class="site-wrapper" id="site-wrapper">
+  {% if page.top %}
+    <section class="wrapper-root wrapper-top" id="wrapper-top">
+      <div class="l-color l-top">
+        <div class="l-site-width l-top-inner">
+          {{ page.top }}
+        </div>
+      </div>
+    </section>
   {% endif %}
 
-  {% if page.sidebar_second %}
-    <aside class="layout-sidebar-second" role="complementary">
-      {{ page.sidebar_second }}
-    </aside>
-  {% endif %}
-
-</main>
-
-<!-- Footer -->
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <span class="copyright">Copyright &copy; Drupal-In-A-Day 2017</span>
-      </div>
-      <div class="col-md-4">
-        <ul class="list-inline social-buttons">
-          <li class="list-inline-item">
-            <a href="#">
-              <i class="fa fa-twitter"></i>
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a href="#">
-              <i class="fa fa-facebook"></i>
-            </a>
-          </li>
-          <li class="list-inline-item">
-            <a href="#">
-              <i class="fa fa-linkedin"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="col-md-4">
-        <ul class="list-inline quicklinks">
-          <li class="list-inline-item">
-            <a href="#">Privacy Policy</a>
-          </li>
-          <li class="list-inline-item">
-            <a href="#">Terms of Use</a>
-          </li>
-        </ul>
+  <header class="wrapper-root wrapper-header" id="wrapper-header" role="banner">
+    <div class="l-color l-header">
+      <div class="l-site-width l-header-inner">
+        <div class="r-header r-header-main">
+          {{ page.header }}
+          {#<button class="btn btn__menu">#}
+              {#<span class="btn__menu--span btn__menu--collapsed">#}
+                {#{{ "Menu"|t }}#}
+                {#<svg class="icon icon__menu">#}
+                  {#<use xlink:href="{{ theme_path }}/images/svgsprite.svg#icon-menu"></use>#}
+                {#</svg>#}
+              {#</span>#}
+            {#<span class="btn__menu--span btn__menu--expanded">#}
+                {#{{ "Close"|t }}#}
+              {#<svg class="icon icon__close">#}
+                  {#<use xlink:href="{{ theme_path }}/images/svgsprite.svg#icon-close"></use>#}
+                {#</svg>#}
+              {#</span>#}
+          {#</button>#}
+        </div>
+        <div class="r-header r-header-navigation">
+          {{ page.navigation }}
+        </div>
       </div>
     </div>
-  </div>
-</footer>
+  </header>
+  <a class="visually-hidden" id="main-content" tabindex="-1"></a>
+  <main class="wrapper-root wrapper-main" id="wrapper-main" role="main">
+
+    {% if page.hero %}
+
+      <div class="l-color l-hero" {{ header_image | raw }}>
+        <div class="l-site-width l-hero-inner">
+          {{ page.hero }}
+        </div>
+      </div>
+    {% endif %}
+
+    {% if page.breadcrumb %}
+      <div class="l-color l-breadcrumb">
+        <div class="l-site-width l-breadcrumb-inner">
+          {{ page.breadcrumb }}
+        </div>
+      </div>
+    {% endif %}
+
+    {% if page.above_content %}
+      <div class="l-color l-above-content">
+        <div class="l-site-width l-above-content-inner">
+          {{ page.above_content }}
+        </div>
+      </div>
+    {% endif %}
+
+    {% if page.messages %}
+      {{ page.messages }}
+    {% endif %}
+
+    {% if page.content_top %}
+      <div class="l-color l-content-top">
+        <div class="l-site-width l-content-top-inner">
+          {{ page.content_top }}
+        </div>
+      </div>
+    {% endif %}
+
+    {% if page.content or page.sidebar_first or page.sidebar_second %}
+      <div class="l-color l-content">
+        <div class="l-site-width l-content-inner">
+
+          {% if page.content %}
+            <div class="r-content r-content-main" role="complementary">
+              {{ page.content }}
+            </div>
+          {% endif %}
+
+          {% if page.sidebar_first or page.sidebar_second %}
+            <aside class="r-content r-content-sidebar" role="complementary">
+              {{ page.sidebar_first }}
+              {{ page.sidebar_second }}
+            </aside>
+          {% endif %}
+
+        </div>
+      </div>
+    {% endif %}
+
+    {% if page.content_bottom %}
+      <div class="l-color l-content-bottom">
+        <div class="l-site-width l-content-bottom-inner">
+          {{ page.content_bottom }}
+        </div>
+      </div>
+    {% endif %}
+
+    {% if page.below_content %}
+      <div class="l-color l-below-content">
+        <div class="l-site-width l-below-content-inner">
+          {{ page.below_content }}
+        </div>
+      </div>
+    {% endif %}
+
+  </main>
+
+  <footer class="wrapper-root wrapper-footer" id="wrapper-footer"
+          role="contentinfo">
+    {% if page.footer_first %}
+      <div class="l-color l-footer-first">
+        <div class="l-site-width l-footer-first-inner">
+          <div class="footerblock__wrapper grid__tile">
+            {{ page.footer_first }}
+          </div>
+        </div>
+      </div>
+    {% endif %}
+    {% if page.footer_second %}
+      <div class="l-color l-footer-second">
+        <div class="l-site-width l-footer-second-inner">
+          {{ page.footer_second }}
+        </div>
+      </div>
+    {% endif %}
+  </footer>
+</div>
+{# Page end #}

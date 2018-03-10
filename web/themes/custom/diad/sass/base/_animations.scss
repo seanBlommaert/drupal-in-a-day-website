@@ -1,0 +1,58 @@
+//------------------------------------------------------------------------------
+// Animations.scss.
+//------------------------------------------------------------------------------
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+
+    transform: translateY(-2rem);
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadin-menu {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+// (RTL) Right to left contextual animation.
+@keyframes contextual-menu-left {
+  from {
+    clip-path: circle(($contextual-width / 2) at calc(#{$contextual-width} / 2) (-$contextual-height / 2));
+  }
+
+  to {
+    clip-path: circle(150% at calc(#{$contextual-width} / 2) (-$contextual-height / 2));
+  }
+}
+
+// Centered contextual links (views for example).
+@keyframes contextual-menu-center {
+  from {
+    clip-path: circle(($contextual-width / 2) at 50% (-$contextual-height / 2));
+  }
+
+  to {
+    clip-path: circle(150% at 50% (-$contextual-height / 2));
+  }
+}
+
+// (LTR) Left to right contextual animation.
+@keyframes contextual-menu-right {
+  from {
+    clip-path: circle(($contextual-width / 2) at calc(100% - (#{$contextual-width} / 2)) (-$contextual-height / 2));
+  }
+
+  to {
+    clip-path: circle(150% at calc(100% - (#{$contextual-width} / 2)) (-$contextual-height / 2));
+  }
+}

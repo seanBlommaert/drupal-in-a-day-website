@@ -1,0 +1,195 @@
+//------------------------------------------------------------------------------
+// Typography.scss.
+//------------------------------------------------------------------------------
+// Links
+a {
+  color: $color-link-default;
+
+  //&:visited {
+  //  color: $color-link-visited;
+  //}
+
+  &:active {
+    color: $color-link-active;
+  }
+
+  &:focus,
+  &:hover {
+    color: $color-link-hover;
+  }
+}
+
+// Paragraphs.
+p {
+  @extend %first-last-child;
+
+  margin-top: (16 / 18) + em;
+  margin-bottom: (16 / 18) + em;
+}
+
+// Headings.
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @extend %first-last-child;
+  margin-top: .866666em;
+  margin-bottom: .866666em;
+
+  font-weight: 500;
+  color: $color-headings;
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 0;
+
+  font-size: $font-size-1-h1;
+}
+
+h2 {
+  font-size: $font-size-1-h2;
+}
+
+h3 {
+  font-size: $font-size-1-h3;
+}
+
+h4 {
+  font-size: $font-size-1-h4;
+}
+
+h5 {
+  font-size: $font-size-1-h5;
+}
+
+h6 {
+  font-size: $font-size-1-h6;
+}
+
+@include mq(bp-tablet) {
+  h1 {
+    font-size: $font-size-2-h1;
+  }
+
+  h2 {
+    font-size: $font-size-2-h2;
+  }
+
+  h3 {
+    font-size: $font-size-2-h3;
+  }
+
+  h4 {
+    font-size: $font-size-2-h4;
+  }
+
+  h5 {
+    font-size: $font-size-2-h5;
+  }
+
+  h6 {
+    font-size: $font-size-2-h6;
+  }
+}
+
+// Seperators.
+hr {
+  color: $color-blue-3;
+  border-style: solid;
+}
+
+// Lists.
+ol,
+ul {
+  padding-left: $ul-padding-left;
+}
+
+li {
+}
+
+// Tables.
+table {
+  @extend %first-last-child;
+  width: 100%;
+  margin-top: $margin-default-6;
+  margin-bottom: $margin-default-6;
+
+  text-align: left;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-color: $color-border-3;
+}
+
+caption {
+  margin-bottom: $margin-default-2;
+
+  font-size: $font-size-large;
+  font-weight: 500;
+  text-align: left;
+  color: $color-headings;
+}
+
+thead {
+
+}
+
+tr {
+  border-bottom: $border-width-1 solid $color-blue-3;
+}
+
+th {
+  padding: $margin-default-2;
+
+  font-weight: 500;
+  color: $color-blue-3;
+
+  &:first-child {
+    padding-left: 0;
+  }
+}
+
+td {
+  padding: $margin-default-2;
+
+  &:first-child {
+    padding-left: 0;
+  }
+}
+
+// Quotes.
+q,
+blockquote {
+  quotes: "“" "”" "‘" "’";
+}
+
+q {
+}
+
+blockquote {
+  position: relative;
+  margin: $margin-default-4 0;
+  padding: $margin-default-6;
+
+  &:before,
+  &:after {
+    position: absolute;
+
+    font-size: 2em;
+    color: $color-blue-3;
+  }
+
+  &:before {
+    content: open-quote;
+    top: $margin-default-4;
+    left: 0;
+  }
+
+  &:after {
+    content: close-quote;
+    right: 0;
+    bottom: $margin-default-4;
+  }
+}
