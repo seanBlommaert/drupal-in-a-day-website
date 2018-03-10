@@ -5,7 +5,6 @@ module:
   block_content: 0
   breakpoint: 0
   ckeditor: 0
-  coffee: 0
   config: 0
   config_filter: 0
   config_split: 0
@@ -19,7 +18,9 @@ module:
   file: 0
   filter: 0
   image: 0
+  layout_discovery: 0
   link: 0
+  media: 0
   menu_link_attributes: 0
   menu_link_content: 0
   menu_ui: 0
@@ -40,6 +41,7 @@ module:
   viewsreference: 0
   webform: 0
   webform_ui: 0
+  ds: 1
   paragraphs: 11
 theme:
   stark: 0
