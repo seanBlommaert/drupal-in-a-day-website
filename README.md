@@ -1,6 +1,6 @@
 # Drupal in a Day
 
-This project contains the Drupal in a Day website!
+This project contains the Drupal in a Day website..
 It was based on [Composer template for Drupal projects](https://github.com/drupal-composer/drupal-project).
 Also read the documentation of the template for more information.
 
