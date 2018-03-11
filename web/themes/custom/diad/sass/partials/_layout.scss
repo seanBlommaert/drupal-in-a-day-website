@@ -74,6 +74,7 @@
 }
 
 .wrapper-footer-inner {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -84,7 +85,6 @@
 }
 
 .l-footer-first {
-  position: relative;
 }
 
 .l-footer-second {
@@ -100,8 +100,8 @@
 .bg-footer {
   position: absolute;
   z-index: -1;
-  top: -3rem;
-  left: -50%;
+  top: -2.8rem;
+  left: -4.7rem;
   width: 18rem;
   height: 20rem;
 

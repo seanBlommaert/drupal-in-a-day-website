@@ -8,7 +8,6 @@
       </div>
     </section>
   {% endif %}
-
   <header class="wrapper-root wrapper-header" id="wrapper-header" role="banner">
     <div class="l-header">
       <div class="l-site-width l-header-inner">
@@ -45,7 +44,6 @@
   </header>
   <a class="visually-hidden" id="main-content" tabindex="-1"></a>
   <main class="wrapper-root wrapper-main" id="wrapper-main" role="main">
-
     {% if page.breadcrumb %}
       <div class="l-breadcrumb">
         <div class="l-site-width l-breadcrumb-inner">
@@ -53,11 +51,9 @@
         </div>
       </div>
     {% endif %}
-
     {% if page.messages %}
       {{ page.messages }}
     {% endif %}
-
     {% if page.above_content %}
       <div class="l-above-content">
         <div class="l-site-width l-above-content-inner">
@@ -65,7 +61,6 @@
         </div>
       </div>
     {% endif %}
-
     {% if page.content_top %}
       <div class="l-content-top">
         <div class="l-site-width l-content-top-inner">
@@ -73,7 +68,6 @@
         </div>
       </div>
     {% endif %}
-
     {% if page.content %}
       <div class="l-content">
           <div class="r-content r-content-main" role="complementary">
@@ -81,7 +75,6 @@
           </div>
       </div>
     {% endif %}
-
     {% if page.content_bottom %}
       <div class="l-content-bottom">
         <div class="l-site-width l-content-bottom-inner">
@@ -89,7 +82,6 @@
         </div>
       </div>
     {% endif %}
-
     {% if page.below_content %}
       <div class="l-below-content">
         <div class="l-site-width l-below-content-inner">
@@ -97,17 +89,12 @@
         </div>
       </div>
     {% endif %}
-
   </main>
-
   <footer class="wrapper-root wrapper-footer" id="wrapper-footer" role="contentinfo">
     <div class="l-site-width wrapper-footer-inner">
     {% if page.footer_first %}
       <div class="l-footer l-footer-first">
         {{ page.footer_first }}
-        <svg class="bg-footer">
-          <use xlink:href="{{ theme_path }}/images/svgsprite.svg#bg-footer"></use>
-        </svg>
       </div>
     {% endif %}
     {% if page.footer_second %}
@@ -118,9 +105,11 @@
     {% if page.footer_third %}
       <div class="l-footer l-footer-third">
         {{ page.footer_third }}
-
       </div>
     {% endif %}
+      <svg class="bg-footer">
+        <use xlink:href="{{ theme_path }}/images/svgsprite.svg#bg-footer"></use>
+      </svg>
     </div>
   </footer>
 </div>

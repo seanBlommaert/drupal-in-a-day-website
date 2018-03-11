@@ -1189,6 +1189,7 @@ blockquote:after {
 }
 
 .wrapper-footer-inner {
+  position: relative;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
@@ -1200,10 +1201,6 @@ blockquote:after {
 .l-footer {
   display: -ms-flexbox;
   display: flex;
-}
-
-.l-footer-first {
-  position: relative;
 }
 
 .l-footer-second {
@@ -1218,8 +1215,8 @@ blockquote:after {
 .bg-footer {
   position: absolute;
   z-index: -1;
-  top: -3rem;
-  left: -50%;
+  top: -2.8rem;
+  left: -4.7rem;
   width: 18rem;
   height: 20rem;
   color: #4a575c;
