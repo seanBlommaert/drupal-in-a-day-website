@@ -13,21 +13,19 @@ regions:
   top: Top
   header: Header
   navigation: Navigation
-  hero: Hero
   breadcrumb: Breadcrumb
-  above_content: Above content
   messages: Messages
+  above_content: Above content
   content_top: Content top
-
   content: Content
-  sidebar_first: Sidebar first
-  sidebar_second: Sidebar second
-
   content_bottom: Content bottom
   below_content: Below content
   footer_first: Footer first
   footer_second: Footer second
   footer_third: Footer third
+
+ckeditor_stylesheets:
+  - /styles/ckeditor.css
 
 stylesheets-remove:
   - "@stable/css/contextual/contextual.theme.css"

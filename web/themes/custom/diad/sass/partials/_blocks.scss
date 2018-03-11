@@ -5,12 +5,25 @@
 .logo {
   display: inline-block;
 }
+a {
+  &:hover,
+  &:focus {
+    .logo__svg {
+      path {
+        fill: $color-blue-2;
+      }
+    }
+  }
+}
 
 .logo__svg {
   width: $logo-width-1; // IE11 svgbug.
   height: $logo-height-1;
 
   vertical-align: top;
+  path {
+    transition: fill 200ms ease;
+  }
 }
 
 .logo__clock {

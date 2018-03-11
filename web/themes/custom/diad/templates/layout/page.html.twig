@@ -46,21 +46,16 @@
   <a class="visually-hidden" id="main-content" tabindex="-1"></a>
   <main class="wrapper-root wrapper-main" id="wrapper-main" role="main">
 
-    {% if page.hero %}
-
-      <div class="l-hero" {{ header_image | raw }}>
-        <div class="l-site-width l-hero-inner">
-          {{ page.hero }}
-        </div>
-      </div>
-    {% endif %}
-
     {% if page.breadcrumb %}
       <div class="l-breadcrumb">
         <div class="l-site-width l-breadcrumb-inner">
           {{ page.breadcrumb }}
         </div>
       </div>
+    {% endif %}
+
+    {% if page.messages %}
+      {{ page.messages }}
     {% endif %}
 
     {% if page.above_content %}
@@ -71,10 +66,6 @@
       </div>
     {% endif %}
 
-    {% if page.messages %}
-      {{ page.messages }}
-    {% endif %}
-
     {% if page.content_top %}
       <div class="l-content-top">
         <div class="l-site-width l-content-top-inner">
@@ -83,17 +74,11 @@
       </div>
     {% endif %}
 
-    {% if page.content or page.sidebar_first or page.sidebar_second %}
+    {% if page.content %}
       <div class="l-content">
-        <div class="l-content-inner">
-
-          {% if page.content %}
-            <div class="r-content r-content-main" role="complementary">
-              {{ page.content }}
-            </div>
-          {% endif %}
-
-        </div>
+          <div class="r-content r-content-main" role="complementary">
+            {{ page.content }}
+          </div>
       </div>
     {% endif %}
 

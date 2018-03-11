@@ -1807,10 +1807,18 @@ img {
   display: inline-block;
 }
 
+a:hover .logo__svg path, a:focus .logo__svg path {
+  fill: #11367a;
+}
+
 .logo__svg {
   width: 8.75rem;
   height: 3.75rem;
   vertical-align: top;
+}
+
+.logo__svg path {
+  transition: fill 200ms ease;
 }
 
 .logo__clock {
@@ -1845,19 +1853,42 @@ img {
 }
 
 .menuitem a {
+  position: relative;
+  z-index: 1;
   display: block;
   padding: .5em 1.5em;
   font-weight: 500;
   text-decoration: none;
   color: #fff;
+  transition: color 200ms ease;
+}
+
+.menuitem a:before {
+  content: " ";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  transition: -webkit-transform 200ms ease;
+  transition: transform 200ms ease;
+  transition: transform 200ms ease, -webkit-transform 200ms ease;
 }
 
 .menuitem a:hover, .menuitem a:focus {
   color: #ff9901;
-  background-color: #fff;
 }
 
-.l-footer .menuitem a:hover, .l-footer .menuitem a:focus {
+.menuitem a:hover:before, .menuitem a:focus:before {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+
+.l-footer .menuitem a:before {
   background-color: #58656b;
 }
 
