@@ -831,6 +831,7 @@ blockquote:after {
   z-index: 0;
   text-decoration: none;
   color: #404e54;
+  background-color: #fff;
   transition: color 300ms ease;
 }
 

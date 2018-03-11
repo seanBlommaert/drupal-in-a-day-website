@@ -8,26 +8,19 @@ dependencies:
     - paragraphs.paragraphs_type.section
   module:
     - entity_reference_revisions
-    - options
 id: paragraph.section.default
 targetEntityType: paragraph
 bundle: section
 mode: default
 content:
-  field_background_color:
-    weight: 0
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: list_default
-    region: content
   field_content:
     type: entity_reference_revisions_entity_view
-    weight: 1
-    label: above
+    weight: 0
+    label: hidden
     settings:
       view_mode: default
       link: ''
     third_party_settings: {  }
     region: content
-hidden: {  }
+hidden:
+  field_background_color: true
