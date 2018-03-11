@@ -10,55 +10,20 @@
   display: flex;
 }
 
-//------------------------------------------------------------------------------
-// Main menu.
-//------------------------------------------------------------------------------
-
-.menuitem__main {
-  .r-header-navigation & {
-    margin-left: .5em;
-
-    a {
-      display: block;
-      padding: 1em;
-
-      font-weight: 500;
-      text-decoration: none;
-      color: $color-white-1;
-
-      &:hover,
-      &:focus {
-        color: $color-orange-1;
-        background-color: $color-white-1;
-      }
-    }
-  }
-
-  .l-footer & {
-    margin-left: .5em;
-
-    a {
-      display: block;
-      padding: 1em;
-
-      font-weight: 500;
-      text-decoration: none;
-      color: $color-white-1;
-
-      &:hover,
-      &:focus {
-        color: $color-orange-1;
-      }
-    }
+@include mq($until: bp-tablet) {
+  .menu__main {
+    flex-direction: column;
   }
 }
 
-.menuitem__footer,
-.menuitem__social {
+//------------------------------------------------------------------------------
+// Main menu.
+//------------------------------------------------------------------------------
+.menuitem {
 
   a {
     display: block;
-    padding: 1em;
+    padding: .5em 1.5em;
 
     font-weight: 500;
     text-decoration: none;
@@ -67,6 +32,49 @@
     &:hover,
     &:focus {
       color: $color-orange-1;
+      background-color: $color-white-1;
     }
+  }
+
+  .l-footer & {
+    a {
+      &:hover,
+      &:focus {
+        background-color: $color-gray-5;
+      }
+    }
+  }
+}
+
+.menuitem__social {
+
+}
+
+.menuitem__footer {
+  font-size: .9em;
+
+  + .menuitem__footer {
+    position: relative;
+    // reserve the space;
+    border-left: $border-width-1 solid transparent;
+
+    &:before {
+      content: " ";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -$border-width-1;
+      height: 1em;
+      margin: auto;
+
+      border-left: $border-width-1 solid $color-gray-6;
+    }
+  }
+
+  a {
+    padding-right: 1em;
+    padding-left: 1em;
+
+    color: $color-gray-6;
   }
 }

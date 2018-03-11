@@ -36,21 +36,12 @@
   flex-grow: 1;
 }
 
-.wrapper-footer-bg {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 3rem;
-  height: 3rem;
-}
-
 .wrapper-footer {
-  position: relative;
   z-index: 1;
   flex-shrink: 0;
   // Make footer sticky.
   margin-top: auto;
+  overflow: hidden;
 
   background-color: $color-l-footer;
 
@@ -65,10 +56,6 @@
   th,
   td {
     padding: $margin-default-1 0;
-  }
-
-  * {
-    color: $color-white-1;
   }
 
   p {
@@ -89,30 +76,62 @@
 .wrapper-footer-inner {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
 .l-footer {
   display: flex;
-  justify-content: flex-end;
 }
 
 .l-footer-first {
-  border-bottom: $border-width-2 solid $color-gray-3;
-
+  position: relative;
 }
 
 .l-footer-second {
-  border-bottom: $border-width-2 solid $color-gray-3;
+  justify-self: flex-end;
 }
 
 .l-footer-third {
   width: 100%;
+
+  border-top: $border-width-2 solid $color-gray-5;
+}
+
+.bg-footer {
+  position: absolute;
+  z-index: -1;
+  top: -3rem;
+  left: -50%;
+  width: 18rem;
+  height: 20rem;
+
+  color: $color-gray-7;
+}
+
+@include mq($until: bp-tablet) {
+  .wrapper-footer-inner {
+    flex-direction: column;
+  }
+
+  .l-footer {
+    justify-content: center;
+    padding-top: .5em;
+    padding-bottom: .5em;
+  }
+}
+
+@include mq(bp-tablet) {
+  .l-footer {
+    justify-content: flex-end;
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
 }
 
 @include mq($until: bp-tablet) {
   .wrapper-main {
     z-index: 1;
+    margin-top: $header-height-1;
   }
 
   .wrapper-root {
@@ -244,10 +263,13 @@
 
 // layout inner styling.
 //------------------------------------------------------------------------------
+
+.l-header-inner {
+  display: flex;
+}
 // Page title, bg-images, search.
 .r-header-main {
   display: flex;
-  align-items: center;
 }
 
 .r-header-navigation {
@@ -256,12 +278,19 @@
 }
 
 @include mq($until: bp-tablet) {
+
+  .l-header-inner {
+    padding: 0;
+  }
+
   .r-header-main {
-    position: sticky;
+    position: fixed;
+    align-items: center;
     z-index: 2;
-    top: 0;
-    padding-right: $site-padding-1;
-    padding-left: $site-padding-1;
+    width: 100%;
+    left: 0;
+    right: 0;
+    padding:  .3em $site-padding-1;
 
     background-color: $color-header-bg-1;
 
@@ -271,12 +300,15 @@
   }
 
   .r-header-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: fixed;
     top: $header-height-1;
     right: 0;
     bottom: 0;
     left: 0;
-    padding: $header-padding-top-1 $site-padding-1 $site-padding-1 $site-padding-1;
+    padding: $site-padding-1;
     overflow: auto;
 
     color: $color-white-1;
@@ -290,19 +322,16 @@
 
 @include mq(bp-tablet) {
   .l-header-inner {
-    display: flex;
-
+    align-items: center;
     padding-top: $header-padding-top-2;
     padding-bottom: $header-padding-top-2;
   }
 
   .r-header-main {
-    align-self: center;
     margin-right: auto;
   }
 
   .r-header-navigation {
-    align-self: flex-end;
     flex-direction: row;
   }
 }

@@ -6,6 +6,14 @@
  */
 
 /**
+ * Implements hook_preprocess().
+ * Function for SVG <use>.
+ */
+function diad_preprocess(&$vars) {
+  $vars['theme_path'] = base_path() . drupal_get_path('theme', 'diad');
+}
+
+/**
  * Implements hook_preprocess_HOOK() for html.html.twig.
  */
 function diad_preprocess_html(array &$variables) {

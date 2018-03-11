@@ -7,20 +7,19 @@
 }
 
 .logo__svg {
-  //width: $logo-width-1; // IE11 svgbug.
+  width: $logo-width-1; // IE11 svgbug.
   height: $logo-height-1;
 
   vertical-align: top;
 }
+
 .logo__clock {
+  fill: $color-logo-1;
   animation: drupal-clock 2s;
-}
-.logo__path {
-  fill: $color-logo;
 }
 
 @include mq($until: bp-tablet) {
-  .logo__svg {
+  .site-logo {
     margin-right: auto;
   }
 }

@@ -7,6 +7,7 @@
 //------------------------------------------------------------------------------
 // Blacks.
 $color-black-1:                   #000;
+$color-black-2:                   #363636;
 
 // Whites.
 $color-white-1:                   #fff;
@@ -15,8 +16,11 @@ $color-white-1:                   #fff;
 
 $color-gray-1:                    #ebedee;
 $color-gray-3:                    #dadada;
-$color-gray-3:                    #ccc;
+$color-gray-3:                    #f4f7f9;
 $color-gray-4:                    #404e54;
+$color-gray-5:                    #58656b;
+$color-gray-6:                    #a6b3b8;
+$color-gray-7:                    #4a575c;
 
 //------------------------------------------------------------------------------
 // Theme colors.
@@ -73,7 +77,8 @@ $color-menu-link-2:               $color-black-1;
 $color-menu-link-hover-2:         $color-blue-1;
 
 // Logo
-$color-logo:                      $color-blue-1;
+$color-logo-1:                    $color-white-1;
+$color-logo-2:                    $color-blue-1;
 
 // HR
 $color-hr:                        $color-blue-1;
@@ -137,7 +142,7 @@ $color-font-base:                 $color-black-1;
 $color-font-highlight:            $color-orange-1;
 
 // Headings.
-$color-headings:                  $color-blue-1;
+$color-headings:                  $color-black-2;
 $color-h1:                        $color-headings;
 $color-h2:                        $color-headings;
 $color-h3:                        $color-headings;

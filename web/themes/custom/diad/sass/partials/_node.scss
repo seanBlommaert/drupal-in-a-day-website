@@ -1,0 +1,26 @@
+
+// Default site centering.
+.node { // @todo remove ugly .node, just very temporary, sorry, unicorn smile.
+  width: 100%;
+  max-width: $site-width-5;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $site-padding-1;
+  padding-left: $site-padding-1;
+  padding-top: $content-padding;
+  padding-bottom: $content-padding;
+}
+
+@include mq(bp-tablet) {
+  .node { // @todo remove ugly .node, just very temporary, sorry, unicorn smile.
+    padding-right: $site-padding-4;
+    padding-left: $site-padding-4;
+  }
+}
+
+@include mq(bp-desktop) {
+  .node { // @todo remove ugly .node, just very temporary, sorry, unicorn smile.
+    padding-right: $site-padding-5;
+    padding-left: $site-padding-5;
+  }
+}
