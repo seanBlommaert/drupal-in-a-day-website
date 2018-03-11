@@ -40,6 +40,10 @@
     <link rel="preload" href="/{{ base_path ~ directory }}/fonts/AvenirLTStd-Oblique.woff" as="font" type="font/woff" crossorigin>
     <link rel="preload" href="/{{ base_path ~ directory }}/fonts/AvenirLTStd-Roman.woff" as="font" type="font/woff" crossorigin>
     {# End font preloading #}
+    <head-placeholder token="{{ placeholder_token|raw }}">
+    <title>{{ head_title|safe_join(' | ') }}</title>
+    <css-placeholder token="{{ placeholder_token|raw }}">
+    <js-placeholder token="{{ placeholder_token|raw }}">
     {# Begin favicon #}
     <link rel="apple-touch-icon" sizes="180x180" href="/themes/custom/diad/images/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/themes/custom/diad/images/favicon/favicon-32x32.png">
@@ -54,10 +58,6 @@
     <meta name="msapplication-config" content="/themes/custom/diad/images/favicon/browserconfig.xml">
     <meta name="theme-color" content="#2ba9e0">
     {# End favicon #}
-    <head-placeholder token="{{ placeholder_token|raw }}">
-    <title>{{ head_title|safe_join(' | ') }}</title>
-    <css-placeholder token="{{ placeholder_token|raw }}">
-    <js-placeholder token="{{ placeholder_token|raw }}">
   </head>
   <body{{ attributes }}>
     <a href="#main-content" class="skip-link">
