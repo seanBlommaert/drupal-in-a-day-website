@@ -36,7 +36,17 @@
   flex-grow: 1;
 }
 
+.wrapper-footer-bg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 3rem;
+  height: 3rem;
+}
+
 .wrapper-footer {
+  position: relative;
   z-index: 1;
   flex-shrink: 0;
   // Make footer sticky.
@@ -56,6 +66,48 @@
   td {
     padding: $margin-default-1 0;
   }
+
+  * {
+    color: $color-white-1;
+  }
+
+  p {
+    margin-top: (5 / 18) + em;
+    margin-bottom: (5 / 18) + em;
+  }
+
+  a {
+    outline-color: $color-highlight-1;
+
+    &:hover,
+    &:focus {
+      color: $color-highlight-1;
+    }
+  }
+}
+
+.wrapper-footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.l-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.l-footer-first {
+  border-bottom: $border-width-2 solid $color-gray-3;
+
+}
+
+.l-footer-second {
+  border-bottom: $border-width-2 solid $color-gray-3;
+}
+
+.l-footer-third {
+  width: 100%;
 }
 
 @include mq($until: bp-tablet) {
@@ -137,6 +189,7 @@
 }
 
 @include mq(bp-tablet) {
+  .node, // @todo remove ugly .node, just very temporary, sorry, unicorn smile.
   .l-site-width {
     padding-right: $site-padding-4;
     padding-left: $site-padding-4;
@@ -144,6 +197,7 @@
 }
 
 @include mq(bp-desktop) {
+  .node, // @todo remove ugly .node, just very temporary, sorry, unicorn smile.
   .l-site-width {
     padding-right: $site-padding-5;
     padding-left: $site-padding-5;
@@ -159,13 +213,6 @@
 
 .l-header {
   background-color: $color-l-header;
-}
-
-.l-hero {
-  background-color: $color-l-hero;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
 }
 
 .l-breadcrumb {
@@ -195,59 +242,9 @@
   border-bottom: $margin-default-2 solid $color-white-1;
 }
 
-.l-footer-first {
-  padding-top: $content-padding;
-  padding-bottom: $content-padding;
-
-
-  * {
-    color: $color-white-1;
-  }
-
-  p {
-    margin-top: (5 / 18) + em;
-    margin-bottom: (5 / 18) + em;
-  }
-
-  a {
-    outline-color: $color-highlight-1;
-
-    &:hover,
-    &:focus {
-      color: $color-highlight-1;
-    }
-  }
-}
-
-.l-footer-second {
-}
-
 // layout inner styling.
 //------------------------------------------------------------------------------
 // Page title, bg-images, search.
-.l-hero-inner {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  height: 100%; // IE11 fix.
-  min-height: $hero-height-1;
-  padding-top: $hero-padding-1;
-  padding-bottom: $hero-padding-1;
-
-  transition: min-height 400ms ease;
-
-  // With image background.
-  [style^="background-image"] & {
-    min-height: $hero-height-bg-1;
-    padding-bottom: 0;
-  }
-
-  // For the search.
-  .path-frontpage & {
-    padding-bottom: $hero-padding-search-1;
-  }
-}
-
 .r-header-main {
   display: flex;
   align-items: center;
@@ -299,25 +296,6 @@
     padding-bottom: $header-padding-top-2;
   }
 
-  .l-hero-inner {
-    min-height: $hero-height-2;
-    padding-top: $hero-padding-2;
-    padding-bottom: $hero-padding-2;
-
-    // With image background.
-    [style^="background-image"] & {
-      min-height: $hero-height-bg-2;
-
-      padding-top: $hero-padding-image-2;
-      padding-bottom: $hero-padding-image-2;
-    }
-
-    // For the search.
-    .path-frontpage & {
-      justify-content: center;
-    }
-  }
-
   .r-header-main {
     align-self: center;
     margin-right: auto;
@@ -327,8 +305,4 @@
     align-self: flex-end;
     flex-direction: row;
   }
-}
-
-.node {
-  padding: $site-padding-1;
 }

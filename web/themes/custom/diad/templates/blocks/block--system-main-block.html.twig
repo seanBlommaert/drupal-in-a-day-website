@@ -25,7 +25,8 @@
  * @see template_preprocess_block()
  */
 #}
-<div{{ attributes }}>
+{% block wrapper_start %}
+{% endblock %}
   {{ title_prefix }}
   {% if label %}
     <h2{{ title_attributes }}>{{ label }}</h2>
@@ -34,4 +35,5 @@
   {% block content %}
     {{ content }}
   {% endblock %}
-</div>
+{% block wrapper_end %}
+{% endblock %}

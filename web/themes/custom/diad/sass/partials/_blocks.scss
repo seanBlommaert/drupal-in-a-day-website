@@ -12,7 +12,9 @@
 
   vertical-align: top;
 }
-
+.logo__clock {
+  animation: drupal-clock 2s;
+}
 .logo__path {
   fill: $color-logo;
 }

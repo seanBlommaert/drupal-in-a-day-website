@@ -25,6 +25,19 @@
 }
 
 // (RTL) Right to left contextual animation.
+@keyframes drupal-clock {
+  from {
+    transform: rotate(0);
+    transform-origin: 16% 63%;
+  }
+
+  to {
+    transform: rotate(360deg);
+    transform-origin: 16% 63%;
+  }
+}
+
+// (RTL) Right to left contextual animation.
 @keyframes contextual-menu-left {
   from {
     clip-path: circle(($contextual-width / 2) at calc(#{$contextual-width} / 2) (-$contextual-height / 2));

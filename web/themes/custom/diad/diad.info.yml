@@ -3,7 +3,7 @@ type: theme
 description: Drupal-In-A-Day theme
 package: Other
 core: 8.x
-base theme: classy
+base theme: stable
 screenshot: diad.png
 
 libraries:
@@ -30,8 +30,7 @@ regions:
   footer_third: Footer third
 
 stylesheets-remove:
-  - "@classy/css/contextual/contextual.theme.css"
-  - "@classy/css/contextual/contextual.module.css"
-  - "@classy/css/contextual/contextual.toolbar.css"
-  - "@classy/css/contextual/contextual.icons.theme.css"
-  - "@classy/css/components/menu.css"
+  - "@stable/css/contextual/contextual.theme.css"
+  - "@stable/css/contextual/contextual.module.css"
+  - "@stable/css/contextual/contextual.toolbar.css"
+  - "@stable/css/contextual/contextual.icons.theme.css"

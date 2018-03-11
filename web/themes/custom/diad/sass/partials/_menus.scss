@@ -5,29 +5,25 @@
 //------------------------------------------------------------------------------
 // default menu styling.
 //------------------------------------------------------------------------------
-.site-wrapper { // temporary.
-  .menu {
-    @extend %reset-list;
-  }
+.menu {
+  @extend %reset-list;
+  display: flex;
 }
 
 //------------------------------------------------------------------------------
 // Main menu.
 //------------------------------------------------------------------------------
-.site-wrapper { // temporary.
-  .menu {
-    display: flex;
-  }
 
-  .menu-item {
-    margin-right: .5em;
+.menuitem__main {
+  .r-header-navigation & {
+    margin-left: .5em;
 
     a {
       display: block;
       padding: 1em;
 
-      text-decoration: none;
       font-weight: 500;
+      text-decoration: none;
       color: $color-white-1;
 
       &:hover,
@@ -35,6 +31,42 @@
         color: $color-orange-1;
         background-color: $color-white-1;
       }
+    }
+  }
+
+  .l-footer & {
+    margin-left: .5em;
+
+    a {
+      display: block;
+      padding: 1em;
+
+      font-weight: 500;
+      text-decoration: none;
+      color: $color-white-1;
+
+      &:hover,
+      &:focus {
+        color: $color-orange-1;
+      }
+    }
+  }
+}
+
+.menuitem__footer,
+.menuitem__social {
+
+  a {
+    display: block;
+    padding: 1em;
+
+    font-weight: 500;
+    text-decoration: none;
+    color: $color-white-1;
+
+    &:hover,
+    &:focus {
+      color: $color-orange-1;
     }
   }
 }
