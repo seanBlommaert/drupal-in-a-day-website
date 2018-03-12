@@ -1,8 +1,9 @@
-uuid: b3f2f52e-cf14-4361-a800-f8b54615679a
+uuid: bfaf0d48-2aea-4b9f-954a-b0aa01d56739
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.media.full
     - field.field.media.audio.field_media_audio_file
     - media.type.audio
   module:
@@ -29,10 +30,10 @@ third_party_settings:
         - field_media_audio_file
 _core:
   default_config_hash: SWf3MLdbEKvlx4Vs6iPwDHu5pr1aKT0SJmgp8no73-k
-id: media.audio.default
+id: media.audio.full
 targetEntityType: media
 bundle: audio
-mode: default
+mode: full
 content:
   field_media_audio_file:
     type: file_audio

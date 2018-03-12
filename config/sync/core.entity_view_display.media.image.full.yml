@@ -1,13 +1,15 @@
-uuid: b3f2f52e-cf14-4361-a800-f8b54615679a
+uuid: 1116e909-0e29-4f7e-b42a-14753fd25ebd
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.media.audio.field_media_audio_file
-    - media.type.audio
+    - core.entity_view_mode.media.full
+    - field.field.media.image.field_media_image
+    - media.type.image
+    - responsive_image.styles.wide
   module:
     - ds
-    - file
+    - responsive_image
 third_party_settings:
   ds:
     layout:
@@ -17,7 +19,7 @@ third_party_settings:
       entity_classes: all_classes
       settings:
         wrappers:
-          ds_content: div
+          ds_content: figure
         outer_wrapper: div
         attributes: ''
         link_attribute: ''
@@ -26,30 +28,28 @@ third_party_settings:
           layout_class: {  }
     regions:
       ds_content:
-        - field_media_audio_file
+        - field_media_image
 _core:
-  default_config_hash: SWf3MLdbEKvlx4Vs6iPwDHu5pr1aKT0SJmgp8no73-k
-id: media.audio.default
+  default_config_hash: jOwnt_yq6AKAfqU6f0xKnxEkFQ2eTPJWxrk3WMLbL68
+id: media.image.full
 targetEntityType: media
-bundle: audio
-mode: default
+bundle: image
+mode: full
 content:
-  field_media_audio_file:
-    type: file_audio
+  field_media_image:
+    type: responsive_image
     weight: 0
+    region: ds_content
     label: visually_hidden
     settings:
-      controls: true
-      multiple_file_display_type: tags
-      autoplay: false
-      loop: false
+      responsive_image_style: wide
+      image_link: ''
     third_party_settings:
       ds:
         ft:
           id: reset
           settings:
             lb: ''
-    region: ds_content
 hidden:
   created: true
   name: true

@@ -45,7 +45,6 @@ module:
   webform_ui: 0
   contribute: 1
   ds: 1
-  ds_extras: 2
   paragraphs: 11
 theme:
   stable: 0

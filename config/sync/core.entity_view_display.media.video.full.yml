@@ -1,10 +1,11 @@
-uuid: b3f2f52e-cf14-4361-a800-f8b54615679a
+uuid: f66720e7-dde6-45b9-9e6f-74718cf340ea
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.media.audio.field_media_audio_file
-    - media.type.audio
+    - core.entity_view_mode.media.full
+    - field.field.media.video.field_media_video_file
+    - media.type.video
   module:
     - ds
     - file
@@ -26,23 +27,26 @@ third_party_settings:
           layout_class: {  }
     regions:
       ds_content:
-        - field_media_audio_file
+        - field_media_video_file
 _core:
-  default_config_hash: SWf3MLdbEKvlx4Vs6iPwDHu5pr1aKT0SJmgp8no73-k
-id: media.audio.default
+  default_config_hash: dQR0mYK5NNg27OigHrxZrHSsnwewnNZcPJKjKIO0cpA
+id: media.video.full
 targetEntityType: media
-bundle: audio
-mode: default
+bundle: video
+mode: full
 content:
-  field_media_audio_file:
-    type: file_audio
+  field_media_video_file:
+    type: file_video
     weight: 0
     label: visually_hidden
     settings:
       controls: true
       multiple_file_display_type: tags
+      width: 640
+      height: 480
       autoplay: false
       loop: false
+      muted: false
     third_party_settings:
       ds:
         ft:
