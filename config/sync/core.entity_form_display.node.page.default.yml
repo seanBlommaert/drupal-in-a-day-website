@@ -8,7 +8,6 @@ dependencies:
     - field.field.node.page.field_subtitle
     - node.type.page
   module:
-    - entity_reference_revisions
     - paragraphs
     - path
 id: node.page.default
@@ -18,33 +17,40 @@ mode: default
 content:
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 6
     settings: {  }
     third_party_settings: {  }
     region: content
   field_content:
-    weight: 31
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_revisions_autocomplete
-    region: content
-  field_sidebar:
-    type: entity_reference_paragraphs
-    weight: 32
+    weight: 2
     settings:
       title: Paragraph
       title_plural: Paragraphs
-      edit_mode: open
-      add_mode: dropdown
+      edit_mode: closed
+      closed_mode: preview
+      autocollapse: none
+      add_mode: button
       form_display_mode: default
-      default_paragraph_type: ''
+      default_paragraph_type: text
+    third_party_settings: {  }
+    type: paragraphs
+    region: content
+  field_sidebar:
+    type: paragraphs
+    weight: 3
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      closed_mode: preview
+      autocollapse: none
+      add_mode: button
+      form_display_mode: default
+      default_paragraph_type: teaser
     third_party_settings: {  }
     region: content
   field_subtitle:
-    weight: 33
+    weight: 1
     settings:
       size: 60
       placeholder: ''
@@ -53,7 +59,7 @@ content:
     region: content
   path:
     type: path
-    weight: 30
+    weight: 9
     settings: {  }
     third_party_settings: {  }
     region: content
@@ -61,26 +67,26 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 15
+    weight: 7
     third_party_settings: {  }
     region: content
   status:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 120
+    weight: 4
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 16
+    weight: 8
     third_party_settings: {  }
     region: content
   title:
     type: string_textfield
-    weight: -5
+    weight: 0
     settings:
       size: 60
       placeholder: ''

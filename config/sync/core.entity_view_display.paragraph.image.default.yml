@@ -5,8 +5,29 @@ dependencies:
   config:
     - field.field.paragraph.image.field_image
     - paragraphs.paragraphs_type.image
+    - responsive_image.styles.wide
   module:
-    - image
+    - ds
+    - responsive_image
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - field_image
 id: paragraph.image.default
 targetEntityType: paragraph
 bundle: image
@@ -14,11 +35,16 @@ mode: default
 content:
   field_image:
     weight: 0
-    label: above
+    label: hidden
     settings:
-      image_style: ''
+      responsive_image_style: wide
       image_link: ''
-    third_party_settings: {  }
-    type: image
-    region: content
+    third_party_settings:
+      ds:
+        ft:
+          id: reset
+          settings:
+            lb: ''
+    type: responsive_image
+    region: ds_content
 hidden: {  }

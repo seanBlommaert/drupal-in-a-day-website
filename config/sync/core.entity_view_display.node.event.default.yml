@@ -18,122 +18,87 @@ dependencies:
     - node.type.event
   module:
     - datetime
-    - entity_reference_revisions
-    - image
-    - link
+    - ds
     - text
     - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: article
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - node_title
+        - field_date
+        - field_location
+        - field_text
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          link: true
+          wrapper: h2
+          class: 'node__title event__title'
+        ft:
+          id: reset
+          settings:
+            lb: ''
 id: node.event.default
 targetEntityType: node
 bundle: event
 mode: default
 content:
-  field_action_links:
-    weight: 104
-    label: above
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    type: link
-    region: content
-  field_audience:
-    weight: 111
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
   field_date:
-    weight: 109
-    label: above
+    weight: 1
+    label: hidden
     settings:
-      format_type: medium
       timezone_override: ''
+      date_format: 'Y-m-d\TH:i:s'
     third_party_settings: {  }
-    type: datetime_default
-    region: content
-  field_faq:
-    type: entity_reference_revisions_entity_view
-    weight: 105
-    label: above
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    region: content
-  field_goal:
-    weight: 110
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_image:
-    weight: 101
-    label: above
-    settings:
-      image_style: ''
-      image_link: ''
-    third_party_settings: {  }
-    type: image
-    region: content
-  field_language:
-    weight: 112
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
+    type: datetime_custom
+    region: ds_content
   field_location:
-    weight: 103
-    label: above
+    weight: 2
+    label: hidden
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
-  field_organizers:
-    type: entity_reference_revisions_entity_view
-    weight: 107
-    label: above
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    region: content
-  field_programme:
-    type: entity_reference_revisions_entity_view
-    weight: 106
-    label: above
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    region: content
-  field_sponsors:
-    type: entity_reference_revisions_entity_view
-    weight: 108
-    label: above
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    region: content
+    region: ds_content
   field_text:
-    weight: 102
-    label: above
+    weight: 3
+    label: hidden
     settings: {  }
-    third_party_settings: {  }
+    third_party_settings:
+      ds:
+        ft:
+          id: reset
+          settings:
+            lb: ''
     type: text_default
-    region: content
-  links:
-    weight: 100
-    region: content
-hidden: {  }
+    region: ds_content
+hidden:
+  field_action_links: true
+  field_audience: true
+  field_faq: true
+  field_goal: true
+  field_image: true
+  field_language: true
+  field_organizers: true
+  field_programme: true
+  field_sponsors: true
+  links: true

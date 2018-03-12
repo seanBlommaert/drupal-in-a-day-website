@@ -13,10 +13,22 @@ settings:
     rows:
       -
         -
+          name: Style
+          items:
+            - Styles
+            - '-'
+            - RemoveFormat
+        -
           name: Formatting
           items:
             - Bold
             - Italic
+            - Strike
+            - '-'
+            - Superscript
+            - Subscript
+            - '-'
+            - HorizontalRule
         -
           name: Links
           items:
@@ -30,17 +42,29 @@ settings:
         -
           name: Media
           items:
+            - Table
             - Blockquote
-            - DrupalImage
+            - SpecialChar
         -
           name: Tools
           items:
+            - Undo
+            - Redo
+            - '-'
+            - Cut
+            - Copy
+            - Paste
+        -
+          name: 'Power tools'
+          items:
             - Source
+            - ShowBlocks
+            - Maximize
   plugins:
     language:
       language_list: un
     stylescombo:
-      styles: ''
+      styles: "a.btn|Button default\r\nh3.editor__title.editor__title--h3|Heading 3\r\nh4.editor__title.editor__title--h4|Heading 4\r\nh5.editor__title.editor__title--h5|Heading 5\r\nh6.editor__title.editor__title--h6|Heading 6"
 image_upload:
   status: false
   scheme: public

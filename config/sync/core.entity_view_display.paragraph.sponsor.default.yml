@@ -7,26 +7,54 @@ dependencies:
     - field.field.paragraph.sponsor.field_link
     - field.field.paragraph.sponsor.field_title
     - paragraphs.paragraphs_type.sponsor
+    - responsive_image.styles.wide
   module:
-    - image
+    - ds
     - link
+    - responsive_image
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - field_title
+        - field_image
+        - field_link
 id: paragraph.sponsor.default
 targetEntityType: paragraph
 bundle: sponsor
 mode: default
 content:
   field_image:
-    weight: 0
-    label: above
+    weight: 1
+    label: hidden
     settings:
-      image_style: ''
+      responsive_image_style: wide
       image_link: ''
-    third_party_settings: {  }
-    type: image
-    region: content
+    third_party_settings:
+      ds:
+        ft:
+          id: reset
+          settings:
+            lb: ''
+    type: responsive_image
+    region: ds_content
   field_link:
     weight: 2
-    label: above
+    label: hidden
     settings:
       trim_length: 80
       url_only: false
@@ -35,13 +63,41 @@ content:
       target: ''
     third_party_settings: {  }
     type: link
-    region: content
+    region: ds_content
   field_title:
-    weight: 1
-    label: above
+    weight: 0
+    label: hidden
     settings:
       link_to_entity: false
-    third_party_settings: {  }
+    third_party_settings:
+      ds:
+        ft:
+          id: expert
+          settings:
+            lb: ''
+            prefix: ''
+            lbw-el: ''
+            lbw-cl: ''
+            lbw-at: ''
+            ow-el: ''
+            ow-cl: ''
+            ow-at: ''
+            fis-el: ''
+            fis-cl: ''
+            fis-at: ''
+            fi: true
+            fi-el: h2
+            fi-cl: 'paragraph__title sponsor__title'
+            fi-at: ''
+            suffix: ''
+            lbw: false
+            lb-col: false
+            ow: false
+            ow-def-at: false
+            ow-def-cl: false
+            fis: false
+            fis-def-at: false
+            fi-def-at: false
     type: string
-    region: content
+    region: ds_content
 hidden: {  }

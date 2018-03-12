@@ -1,13 +1,12 @@
-uuid: b9d573ec-96e5-4795-94a7-e9e74d6e1120
+uuid: 874b867d-eed1-42b9-8f57-8d33145f2fc3
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.links.field_links
-    - paragraphs.paragraphs_type.links
+    - core.entity_view_mode.user.full
   module:
     - ds
-    - link
+    - user
 third_party_settings:
   ds:
     layout:
@@ -26,28 +25,30 @@ third_party_settings:
           layout_class: {  }
     regions:
       ds_content:
-        - field_links
-id: paragraph.links.default
-targetEntityType: paragraph
-bundle: links
-mode: default
-content:
-  field_links:
-    weight: 0
-    label: hidden
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: '0'
-      target: '0'
-    third_party_settings:
-      ds:
-        ds_limit: ''
+        - username
+        - member_for
+    fields:
+      username:
+        plugin_id: username
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          wrapper: h1
+          class: user__title
+          link: false
         ft:
           id: reset
           settings:
             lb: ''
-    type: link
+id: user.user.full
+targetEntityType: user
+bundle: user
+mode: full
+content:
+  member_for:
+    weight: 1
     region: ds_content
+    settings: {  }
+    third_party_settings: {  }
 hidden: {  }

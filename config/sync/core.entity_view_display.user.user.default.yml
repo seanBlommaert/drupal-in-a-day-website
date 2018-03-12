@@ -1,11 +1,7 @@
-uuid: 0ccdf316-8e52-4379-b7b6-1748b18aaa6e
+uuid: de618e31-d30d-4529-b118-640cc0e86aad
 langcode: en
 status: true
 dependencies:
-  config:
-    - core.entity_view_mode.node.teaser
-    - field.field.node.home.field_content
-    - node.type.home
   module:
     - ds
     - user
@@ -27,26 +23,25 @@ third_party_settings:
           layout_class: {  }
     regions:
       ds_content:
-        - node_title
+        - username
     fields:
-      node_title:
-        plugin_id: node_title
+      username:
+        plugin_id: username
         weight: 0
         label: hidden
         formatter: default
         settings:
           link: true
           wrapper: h2
-          class: 'node__title home__title'
+          class: user__title
         ft:
           id: reset
           settings:
             lb: ''
-id: node.home.teaser
-targetEntityType: node
-bundle: home
-mode: teaser
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
 content: {  }
 hidden:
-  field_content: true
-  links: true
+  member_for: true

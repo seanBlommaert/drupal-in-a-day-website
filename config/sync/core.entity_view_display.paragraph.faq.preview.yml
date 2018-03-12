@@ -1,15 +1,14 @@
-uuid: 3e152205-3e7a-4df9-934c-686fff238a3e
+uuid: 4e7ee200-e00f-4f8b-9935-6ac1c8006de1
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.programme.field_text
-    - field.field.paragraph.programme.field_time
-    - field.field.paragraph.programme.field_title
-    - paragraphs.paragraphs_type.programme
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.faq.field_text
+    - field.field.paragraph.faq.field_title
+    - paragraphs.paragraphs_type.faq
   module:
     - ds
-    - text
 third_party_settings:
   ds:
     layout:
@@ -29,35 +28,13 @@ third_party_settings:
     regions:
       ds_content:
         - field_title
-        - field_text
-        - field_time
-id: paragraph.programme.default
+id: paragraph.faq.preview
 targetEntityType: paragraph
-bundle: programme
-mode: default
+bundle: faq
+mode: preview
 content:
-  field_text:
-    weight: 2
-    label: hidden
-    settings: {  }
-    third_party_settings:
-      ds:
-        ft:
-          id: reset
-          settings:
-            lb: ''
-    type: text_default
-    region: ds_content
-  field_time:
-    weight: 3
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: ds_content
   field_title:
-    weight: 1
+    weight: 0
     label: hidden
     settings:
       link_to_entity: false
@@ -79,7 +56,7 @@ content:
             fis-at: ''
             fi: true
             fi-el: h2
-            fi-cl: 'paragraph__title programme__title'
+            fi-cl: 'paragraph__title paragraph__title faq__title'
             fi-at: ''
             suffix: ''
             lbw: false
@@ -92,4 +69,5 @@ content:
             fi-def-at: false
     type: string
     region: ds_content
-hidden: {  }
+hidden:
+  field_text: true

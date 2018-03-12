@@ -11,6 +11,7 @@ module:
   ctools: 0
   datetime: 0
   dblog: 0
+  diad_updates: 0
   dynamic_page_cache: 0
   editor: 0
   entity_reference_revisions: 0
@@ -47,7 +48,6 @@ module:
   ds_extras: 2
   paragraphs: 11
 theme:
-  stark: 0
   stable: 0
   classy: 0
   seven: 0

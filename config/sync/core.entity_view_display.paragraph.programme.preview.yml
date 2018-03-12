@@ -1,15 +1,15 @@
-uuid: 3e152205-3e7a-4df9-934c-686fff238a3e
+uuid: b6981f68-2317-4a7e-85b8-36a9819a6f9d
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.paragraph.preview
     - field.field.paragraph.programme.field_text
     - field.field.paragraph.programme.field_time
     - field.field.paragraph.programme.field_title
     - paragraphs.paragraphs_type.programme
   module:
     - ds
-    - text
 third_party_settings:
   ds:
     layout:
@@ -29,35 +29,13 @@ third_party_settings:
     regions:
       ds_content:
         - field_title
-        - field_text
-        - field_time
-id: paragraph.programme.default
+id: paragraph.programme.preview
 targetEntityType: paragraph
 bundle: programme
-mode: default
+mode: preview
 content:
-  field_text:
-    weight: 2
-    label: hidden
-    settings: {  }
-    third_party_settings:
-      ds:
-        ft:
-          id: reset
-          settings:
-            lb: ''
-    type: text_default
-    region: ds_content
-  field_time:
-    weight: 3
-    label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: ds_content
   field_title:
-    weight: 1
+    weight: 0
     label: hidden
     settings:
       link_to_entity: false
@@ -92,4 +70,6 @@ content:
             fi-def-at: false
     type: string
     region: ds_content
-hidden: {  }
+hidden:
+  field_text: true
+  field_time: true

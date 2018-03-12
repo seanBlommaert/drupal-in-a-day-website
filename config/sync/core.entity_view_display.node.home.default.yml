@@ -6,25 +6,46 @@ dependencies:
     - field.field.node.home.field_content
     - node.type.home
   module:
-    - entity_reference_revisions
+    - ds
     - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: article
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - node_title
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          link: true
+          wrapper: h2
+          class: 'node__title home__title'
+        ft:
+          id: reset
+          settings:
+            lb: ''
 id: node.home.default
 targetEntityType: node
 bundle: home
 mode: default
-content:
-  field_content:
-    weight: 102
-    label: above
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    type: entity_reference_revisions_entity_view
-    region: content
-  links:
-    weight: 100
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-hidden: {  }
+content: {  }
+hidden:
+  field_content: true
+  links: true

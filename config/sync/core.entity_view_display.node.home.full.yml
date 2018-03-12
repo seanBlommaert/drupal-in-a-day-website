@@ -19,7 +19,7 @@ third_party_settings:
       entity_classes: all_classes
       settings:
         wrappers:
-          ds_content: div
+          ds_content: article
         outer_wrapper: div
         attributes: ''
         link_attribute: ''
@@ -29,7 +29,6 @@ third_party_settings:
     regions:
       ds_content:
         - node_title
-        - field_hero
         - field_content
     fields:
       node_title:
@@ -39,8 +38,12 @@ third_party_settings:
         formatter: default
         settings:
           wrapper: h1
-          class: node__title
+          class: 'node__title home__title'
           link: false
+        ft:
+          id: reset
+          settings:
+            lb: ''
 id: node.home.full
 targetEntityType: node
 bundle: home
@@ -52,7 +55,13 @@ content:
     settings:
       view_mode: default
       link: ''
-    third_party_settings: {  }
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: reset
+          settings:
+            lb: ''
     type: entity_reference_revisions_entity_view
     region: ds_content
   field_hero:

@@ -1,4 +1,4 @@
-uuid: 8be40534-f82c-409c-91da-f5a1d9fd18e5
+uuid: 27877411-f545-46c5-bb72-fcdd312c9baf
 langcode: en
 status: true
 dependencies:
@@ -6,17 +6,87 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.page.field_content
     - field.field.node.page.field_sidebar
+    - field.field.node.page.field_subtitle
     - node.type.page
   module:
+    - ds
     - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: article
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - node_title
+        - field_subtitle
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          link: true
+          wrapper: h2
+          class: 'node__title page__title'
+        ft:
+          id: reset
+          settings:
+            lb: ''
 id: node.page.teaser
 targetEntityType: node
 bundle: page
 mode: teaser
 content:
-  links:
-    weight: 100
-    region: content
+  field_subtitle:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings:
+      ds:
+        ft:
+          id: expert
+          settings:
+            lb: ''
+            prefix: ''
+            lbw-el: ''
+            lbw-cl: ''
+            lbw-at: ''
+            ow-el: ''
+            ow-cl: ''
+            ow-at: ''
+            fis-el: ''
+            fis-cl: ''
+            fis-at: ''
+            fi: true
+            fi-el: ''
+            fi-cl: 'node__subtitle page__subtitle'
+            fi-at: ''
+            suffix: ''
+            lbw: false
+            lb-col: false
+            ow: false
+            ow-def-at: false
+            ow-def-cl: false
+            fis: false
+            fis-def-at: false
+            fi-def-at: false
+    type: string
+    region: ds_content
 hidden:
   field_content: true
   field_sidebar: true
+  links: true

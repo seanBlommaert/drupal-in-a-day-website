@@ -1,13 +1,15 @@
-uuid: b9d573ec-96e5-4795-94a7-e9e74d6e1120
+uuid: 83d8275f-87a8-4e76-8666-46e8dca766ab
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.links.field_links
-    - paragraphs.paragraphs_type.links
+    - core.entity_view_mode.paragraph.preview
+    - field.field.paragraph.image.field_image
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.image
   module:
     - ds
-    - link
+    - image
 third_party_settings:
   ds:
     layout:
@@ -26,28 +28,24 @@ third_party_settings:
           layout_class: {  }
     regions:
       ds_content:
-        - field_links
-id: paragraph.links.default
+        - field_image
+id: paragraph.image.preview
 targetEntityType: paragraph
-bundle: links
-mode: default
+bundle: image
+mode: preview
 content:
-  field_links:
+  field_image:
     weight: 0
     label: hidden
     settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: '0'
-      target: '0'
+      image_style: thumbnail
+      image_link: ''
     third_party_settings:
       ds:
-        ds_limit: ''
         ft:
           id: reset
           settings:
             lb: ''
-    type: link
+    type: image
     region: ds_content
 hidden: {  }

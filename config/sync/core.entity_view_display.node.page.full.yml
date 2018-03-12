@@ -1,36 +1,41 @@
-uuid: 7ab81510-ab62-4d2a-9ad1-35fdef545d1e
+uuid: 615b23cd-71da-4282-895f-324000030451
 langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
-    - field.field.node.landing.field_content
-    - field.field.node.landing.field_subtitle
-    - field.field.node.landing.field_teaser
-    - node.type.landing
+    - core.entity_view_mode.node.full
+    - field.field.node.page.field_content
+    - field.field.node.page.field_sidebar
+    - field.field.node.page.field_subtitle
+    - node.type.page
   module:
     - ds
+    - paragraphs
     - user
 third_party_settings:
   ds:
     layout:
-      id: ds_1col
-      library: null
+      id: ds_2col
+      library: ds/ds_2col
       disable_css: false
       entity_classes: all_classes
       settings:
         wrappers:
-          ds_content: article
-        outer_wrapper: div
+          left: div
+          right: aside
+        outer_wrapper: article
         attributes: ''
         link_attribute: ''
         link_custom: ''
         classes:
           layout_class: {  }
     regions:
-      ds_content:
+      left:
         - node_title
         - field_subtitle
+        - field_content
+      right:
+        - field_sidebar
     fields:
       node_title:
         plugin_id: node_title
@@ -40,16 +45,42 @@ third_party_settings:
         settings:
           link: true
           wrapper: h2
-          class: 'node__title landing__title'
+          class: 'node__title page__title'
         ft:
           id: reset
           settings:
             lb: ''
-id: node.landing.teaser
+id: node.page.full
 targetEntityType: node
-bundle: landing
-mode: teaser
+bundle: page
+mode: full
 content:
+  field_content:
+    type: paragraph_summary
+    weight: 2
+    region: left
+    label: hidden
+    settings: {  }
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: reset
+          settings:
+            lb: ''
+  field_sidebar:
+    type: paragraph_summary
+    weight: 3
+    region: right
+    label: hidden
+    settings: {  }
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: reset
+          settings:
+            lb: ''
   field_subtitle:
     weight: 1
     label: hidden
@@ -72,8 +103,8 @@ content:
             fis-cl: ''
             fis-at: ''
             fi: true
-            fi-el: div
-            fi-cl: 'node__subtitle landing__subtitle'
+            fi-el: ''
+            fi-cl: 'node__subtitle page__subtitle'
             fi-at: ''
             suffix: ''
             lbw: false
@@ -85,8 +116,6 @@ content:
             fis-def-at: false
             fi-def-at: false
     type: string
-    region: ds_content
+    region: left
 hidden:
-  field_content: true
-  field_teaser: true
   links: true

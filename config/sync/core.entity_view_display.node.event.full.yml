@@ -1,0 +1,219 @@
+uuid: fea75f8c-0d88-4d6c-b110-9b646dfacce4
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.event.field_action_links
+    - field.field.node.event.field_audience
+    - field.field.node.event.field_date
+    - field.field.node.event.field_faq
+    - field.field.node.event.field_goal
+    - field.field.node.event.field_image
+    - field.field.node.event.field_language
+    - field.field.node.event.field_location
+    - field.field.node.event.field_organizers
+    - field.field.node.event.field_programme
+    - field.field.node.event.field_sponsors
+    - field.field.node.event.field_text
+    - node.type.event
+    - responsive_image.styles.wide
+  module:
+    - datetime
+    - ds
+    - entity_reference_revisions
+    - link
+    - responsive_image
+    - text
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: article
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - node_title
+        - field_image
+        - field_date
+        - field_location
+        - field_text
+        - field_action_links
+        - field_faq
+        - field_programme
+        - field_organizers
+        - field_sponsors
+        - field_goal
+        - field_audience
+        - field_language
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          wrapper: h1
+          class: 'node__title event__title'
+          link: false
+        ft:
+          id: reset
+          settings:
+            lb: ''
+id: node.event.full
+targetEntityType: node
+bundle: event
+mode: full
+content:
+  field_action_links:
+    weight: 5
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: ds_content
+  field_audience:
+    weight: 11
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: ds_content
+  field_date:
+    weight: 2
+    label: hidden
+    settings:
+      timezone_override: ''
+      date_format: 'Y-m-d\TH:i:s'
+    third_party_settings: {  }
+    type: datetime_custom
+    region: ds_content
+  field_faq:
+    type: entity_reference_revisions_entity_view
+    weight: 6
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: reset
+          settings:
+            lb: ''
+    region: ds_content
+  field_goal:
+    weight: 10
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: ds_content
+  field_image:
+    weight: 1
+    label: hidden
+    settings:
+      responsive_image_style: wide
+      image_link: ''
+    third_party_settings:
+      ds:
+        ft:
+          id: reset
+          settings:
+            lb: ''
+    type: responsive_image
+    region: ds_content
+  field_language:
+    weight: 12
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: ds_content
+  field_location:
+    weight: 3
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: ds_content
+  field_organizers:
+    type: entity_reference_revisions_entity_view
+    weight: 8
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: reset
+          settings:
+            lb: ''
+    region: ds_content
+  field_programme:
+    type: entity_reference_revisions_entity_view
+    weight: 7
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: reset
+          settings:
+            lb: ''
+    region: ds_content
+  field_sponsors:
+    type: entity_reference_revisions_entity_view
+    weight: 9
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: reset
+          settings:
+            lb: ''
+    region: ds_content
+  field_text:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings:
+      ds:
+        ft:
+          id: reset
+          settings:
+            lb: ''
+    type: text_default
+    region: ds_content
+hidden:
+  links: true

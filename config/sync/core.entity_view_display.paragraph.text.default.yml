@@ -6,7 +6,27 @@ dependencies:
     - field.field.paragraph.text.field_text
     - paragraphs.paragraphs_type.text
   module:
+    - ds
     - text
+third_party_settings:
+  ds:
+    layout:
+      id: ds_1col
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        wrappers:
+          ds_content: div
+        outer_wrapper: div
+        attributes: ''
+        link_attribute: ''
+        link_custom: ''
+        classes:
+          layout_class: {  }
+    regions:
+      ds_content:
+        - field_text
 id: paragraph.text.default
 targetEntityType: paragraph
 bundle: text
@@ -14,9 +34,14 @@ mode: default
 content:
   field_text:
     weight: 0
-    label: above
+    label: hidden
     settings: {  }
-    third_party_settings: {  }
+    third_party_settings:
+      ds:
+        ft:
+          id: reset
+          settings:
+            lb: ''
     type: text_default
-    region: content
+    region: ds_content
 hidden: {  }

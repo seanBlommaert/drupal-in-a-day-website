@@ -1,15 +1,17 @@
-uuid: 3e152205-3e7a-4df9-934c-686fff238a3e
+uuid: fce99be5-cef5-4154-826f-8e81c8f305c6
 langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.programme.field_text
-    - field.field.paragraph.programme.field_time
-    - field.field.paragraph.programme.field_title
-    - paragraphs.paragraphs_type.programme
+    - core.entity_view_mode.node.full
+    - field.field.node.landing.field_content
+    - field.field.node.landing.field_subtitle
+    - field.field.node.landing.field_teaser
+    - node.type.landing
   module:
     - ds
-    - text
+    - paragraphs
+    - user
 third_party_settings:
   ds:
     layout:
@@ -19,7 +21,7 @@ third_party_settings:
       entity_classes: all_classes
       settings:
         wrappers:
-          ds_content: div
+          ds_content: article
         outer_wrapper: div
         attributes: ''
         link_attribute: ''
@@ -28,35 +30,43 @@ third_party_settings:
           layout_class: {  }
     regions:
       ds_content:
-        - field_title
-        - field_text
-        - field_time
-id: paragraph.programme.default
-targetEntityType: paragraph
-bundle: programme
-mode: default
-content:
-  field_text:
-    weight: 2
-    label: hidden
-    settings: {  }
-    third_party_settings:
-      ds:
+        - node_title
+        - field_subtitle
+        - field_content
+        - field_teaser
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default
+        settings:
+          wrapper: h1
+          class: 'node__title landing__title'
+          link: false
         ft:
           id: reset
           settings:
             lb: ''
-    type: text_default
+id: node.landing.full
+targetEntityType: node
+bundle: landing
+mode: full
+content:
+  field_content:
+    type: paragraph_summary
+    weight: 2
     region: ds_content
-  field_time:
-    weight: 3
     label: hidden
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: ds_content
-  field_title:
+    settings: {  }
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: reset
+          settings:
+            lb: ''
+  field_subtitle:
     weight: 1
     label: hidden
     settings:
@@ -79,7 +89,7 @@ content:
             fis-at: ''
             fi: true
             fi-el: h2
-            fi-cl: 'paragraph__title programme__title'
+            fi-cl: 'node__subtitle landing__subtitle'
             fi-at: ''
             suffix: ''
             lbw: false
@@ -92,4 +102,18 @@ content:
             fi-def-at: false
     type: string
     region: ds_content
-hidden: {  }
+  field_teaser:
+    type: paragraph_summary
+    weight: 3
+    region: ds_content
+    label: hidden
+    settings: {  }
+    third_party_settings:
+      ds:
+        ds_limit: ''
+        ft:
+          id: reset
+          settings:
+            lb: ''
+hidden:
+  links: true
