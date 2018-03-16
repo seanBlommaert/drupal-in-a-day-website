@@ -36,8 +36,9 @@ Using drush you can easily set up a fresh installation for test/development:
 - Make sure all composer packages are installed.
 - Copy _web/sites/default/default.settings.local.php_ to _web/sites/default/settings.local.php_.
 - Add database credentials and other custom config in your _settings.local.php_.
+- Make sure that ```$config['config_split.config_split.development']['status'] = TRUE;``` is in settings.local.php
 - Run the drush site install from the _web_ directory:
-```drush si config_installer --account-name=[username-user-1] --account-pass=[your-password]````
+```drush si config_installer --account-name=[username-user-1] --account-pass=[your-password]```
 
 
 
